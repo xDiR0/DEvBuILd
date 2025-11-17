@@ -1,0 +1,82 @@
+[gd_scene load_steps=13 format=3 uid="uid://b167x4p0gsd5a"]
+
+[ext_resource type="PackedScene" uid="uid://dggt22nmp128r" path="res://data/model_city/Cityscene_final2.fbx" id="1_036b0"]
+[ext_resource type="Texture2D" uid="uid://b1vo5kdhogh8a" path="res://data/textures[base]/PNG/Dark/texture_01.png" id="1_aqk2v"]
+[ext_resource type="Texture2D" uid="uid://ddalekg1a403x" path="res://data/textures[base]/PNG/Dark/texture_04.png" id="2_036b0"]
+[ext_resource type="Script" uid="uid://dkq3jtu6trwff" path="res://data/player.gd" id="3_dwbse"]
+[ext_resource type="PackedScene" uid="uid://d1hkyj455hod3" path="res://data/player/scene.gltf" id="4_pkg7o"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gbfbk"]
+
+[sub_resource type="Sky" id="Sky_ioo17"]
+sky_material = SubResource("ProceduralSkyMaterial_gbfbk")
+
+[sub_resource type="Environment" id="Environment_wse8f"]
+background_mode = 2
+sky = SubResource("Sky_ioo17")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ic0uy"]
+size = Vector3(0.33267212, 0.00579834, 0.28686523)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k3n1d"]
+albedo_texture = ExtResource("1_aqk2v")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2o6r5"]
+albedo_texture = ExtResource("2_036b0")
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_70uel"]
+height = 1.635498
+radius = 0.28076172
+
+[node name="World" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_wse8f")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="WorldEnvironment"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldEnvironment/StaticBody3D"]
+transform = Transform3D(21.985, 0, 0, 0, 21.985, 0, 0, 0, 21.985, 5.052471, 7.314444, 20.618834)
+shape = SubResource("BoxShape3D_ic0uy")
+
+[node name="Cityscene_final2" parent="." instance=ExtResource("1_036b0")]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.9832549, -0.07557184, 0.16582726, 0, 0.90996134, 0.41469324, -0.18223552, -0.40774918, 0.8947239, -3.3662424, 10.914632, 27.249475)
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3935637, 6.694454, 21.215782)
+material_override = SubResource("StandardMaterial3D_k3n1d")
+size = Vector3(13.080078, 1.35672, 6.3588867)
+material = SubResource("StandardMaterial3D_2o6r5")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGCombiner3D/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3846757, -0.23616028, 0)
+rotation_edit_mode = 1
+operation = 2
+calculate_tangents = false
+radius = 2.6689453
+sides = 64
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="CSGCombiner3D/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.678493, -0.23616028, 0)
+operation = 2
+radius = 2.1479492
+height = 4.597412
+sides = 3
+
+[node name="Player" type="CharacterBody3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.489651, 8.141898, 21.570007)
+script = ExtResource("3_dwbse")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05065918, 0)
+shape = SubResource("CylinderShape3D_70uel")
+
+[node name="Sketchfab_Scene" parent="Player/CollisionShape3D" instance=ExtResource("4_pkg7o")]
+transform = Transform3D(0.008, 0, 0, 0, 0.008, 0, 0, 0, 0.008, 0, -0.812, -0.029)
