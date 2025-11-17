@@ -1,7 +1,0 @@
-[gd_scene format=3 uid="uid://b167x4p0gsd5a"]
-
-[node name="World" type="Node3D"]
-
-[node name="Camera3D" type="Camera3D" parent="."]
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]

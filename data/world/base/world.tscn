@@ -1,0 +1,172 @@
+[gd_scene load_steps=14 format=3 uid="uid://bfgfxx565ds2"]
+
+[ext_resource type="Texture2D" uid="uid://d11lo10rv30vr" path="res://data/sky/citrus_orchard_road_puresky_4k.exr" id="1_ffaha"]
+[ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://data/character/Character.tscn" id="2_qauke"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_hkud5"]
+panorama = ExtResource("1_ffaha")
+
+[sub_resource type="Sky" id="Sky_fh8d7"]
+sky_material = SubResource("PanoramaSkyMaterial_hkud5")
+process_mode = 2
+radiance_size = 6
+
+[sub_resource type="Environment" id="Environment_fh8d7"]
+background_mode = 2
+background_energy_multiplier = 0.5
+sky = SubResource("Sky_fh8d7")
+ambient_light_source = 3
+ambient_light_color = Color(0.11785448, 0.3591845, 1, 1)
+reflected_light_source = 2
+
+[sub_resource type="Compositor" id="Compositor_kp8o4"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_u78t4"]
+
+[sub_resource type="Terrain3DMaterial" id="Terrain3DMaterial_e2f5u"]
+_shader_parameters = {
+&"auto_base_texture": 0,
+&"auto_height_reduction": 0.1,
+&"auto_overlay_texture": 1,
+&"auto_slope": 1.0,
+&"bias_distance": 512.0,
+&"blend_sharpness": 0.87,
+&"depth_blur": 0.0,
+&"enable_macro_variation": true,
+&"enable_projection": true,
+&"height_blending": true,
+&"macro_variation1": Color(1, 1, 1, 1),
+&"macro_variation2": Color(1, 1, 1, 1),
+&"macro_variation_slope": 0.333,
+&"mipmap_bias": 1.0,
+&"noise1_angle": 0.0,
+&"noise1_offset": Vector2(0.5, 0.5),
+&"noise1_scale": 0.04,
+&"noise2_scale": 0.076,
+&"noise3_scale": 0.225,
+&"noise_texture": SubResource("NoiseTexture2D_u78t4"),
+&"projection_angular_division": 2.0,
+&"projection_threshold": 0.41999999061216,
+&"world_noise_fragment_normals": false,
+&"world_noise_height": 64.0,
+&"world_noise_lod_distance": 7500.0,
+&"world_noise_max_octaves": 4,
+&"world_noise_min_octaves": 2,
+&"world_noise_offset": Vector3(0, 0, 0),
+&"world_noise_region_blend": 0.33,
+&"world_noise_scale": 5.0,
+&"world_space_normal_blend": true
+}
+world_background = 2
+texture_filtering = 1
+auto_shader = true
+show_checkered = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_grm2t"]
+transparency = 4
+cull_mode = 2
+vertex_color_use_as_albedo = true
+backlight_enabled = true
+backlight = Color(0.5, 0.5, 0.5, 1)
+distance_fade_mode = 1
+distance_fade_min_distance = 128.0
+distance_fade_max_distance = 96.0
+
+[sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_vjpis"]
+generated_type = 1
+height_offset = 0.5
+material_override = SubResource("StandardMaterial3D_grm2t")
+last_lod = 0
+last_shadow_lod = 0
+lod0_range = 128.0
+
+[sub_resource type="Terrain3DAssets" id="Terrain3DAssets_0b6o4"]
+mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_vjpis")])
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_qauke"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bpyq0"]
+metallic = 1.0
+emission_enabled = true
+emission = Color(0.9999997, 0.5887672, 0.22709492, 1)
+
+[node name="World" type="Node3D"]
+transform = Transform3D(4.5009823, 0, 0, 0, 5.0247216, 0, 0, 0, 4.5009823, 0, 0, -40.348732)
+
+[node name="World" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_fh8d7")
+compositor = SubResource("Compositor_kp8o4")
+
+[node name="Terrain3D" type="Terrain3D" parent="."]
+data_directory = "res://data/world"
+material = SubResource("Terrain3DMaterial_e2f5u")
+assets = SubResource("Terrain3DAssets_0b6o4")
+label_size = 128
+collision_mode = 3
+collision_shape_size = 64
+collision_radius = 256
+physics_material = SubResource("PhysicsMaterial_qauke")
+mesh_lods = 10
+mesh_size = 64
+vertex_spacing = 1.7
+gi_mode = 2
+show_checkered = true
+top_level = true
+metadata/_edit_lock_ = true
+
+[node name="Room" type="CSGCombiner3D" parent="."]
+transform = Transform3D(0.16450217, 0, 0, 0, 0.1645022, 0, 0, 0, 0.18172887, 0, 0.024683408, 10.274975)
+use_collision = true
+
+[node name="Character" parent="Room" instance=ExtResource("2_qauke")]
+transform = Transform3D(-1.3483577, 0, -0.070140995, 0, 1.2098073, 0, 0.0774862, 0, -1.2205422, 1.222908, 5.7220448e-05, -10.694525)
+can_sprint = true
+can_freefly = true
+input_left = "move_left"
+input_right = "move_right"
+input_forward = "move_up"
+input_back = "move_down"
+input_jump = "jump"
+
+[node name="Wall" type="CSGBox3D" parent="Room"]
+transform = Transform3D(3.0185807, 0, 0, 0, 4.657657, 0, 0, 0, 2.9165766, 14.313396, 7.9489183, -7.450775)
+size = Vector3(0.13, 4, 8)
+
+[node name="Wall2" type="CSGBox3D" parent="Room"]
+transform = Transform3D(3.0185807, 0, 0, 0, 4.657657, 0, 0, 0, 2.9165766, -9.500561, 7.9489183, -7.450775)
+size = Vector3(0.13, 4, 8)
+
+[node name="Wall3" type="CSGBox3D" parent="Room"]
+transform = Transform3D(-1.2748761e-07, 0, -3.0185807, 0, 4.657657, 0, 2.9165766, 0, -1.3194634e-07, 2.431257, 7.9489183, -18.924906)
+size = Vector3(0.118222654, 4, 8.000488)
+
+[node name="Wall4" type="CSGBox3D" parent="Room"]
+transform = Transform3D(-1.2748761e-07, 0, -3.0185807, 0, 4.657657, 0, 2.9165766, 0, -1.3194634e-07, 2.4018934, 7.9489183, 4.098869)
+size = Vector3(0.13, 4, 8.019104)
+
+[node name="Door" type="CSGBox3D" parent="Room/Wall4"]
+transform = Transform3D(-1.498722e-08, 0, 0.3428677, 0, 0.21470019, 0, -0.33128148, 0, -1.4480773e-08, 0.074852586, -1.1414592, -0.0016159415)
+operation = 2
+size = Vector3(3.621338, 5.329529, 1)
+
+[node name="Cube" type="CSGBox3D" parent="Room"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.6958765, -4.675639)
+
+[node name="Sphere" type="CSGSphere3D" parent="Room"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1.6958768, -4.675639)
+radius = 0.3
+rings = 85
+material = SubResource("StandardMaterial3D_bpyq0")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Room/Sphere"]
+transform = Transform3D(1.3505824, 0, 0, 0, 1.2098074, 0, 0, 0, 1.222556, -0.1454773, 0.06637442, -0.068330765)
+shadow_enabled = true
+distance_fade_enabled = true
+
+[node name="Roof" type="CSGBox3D" parent="Room"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3918846, 17.221914, -7.4011154)
+size = Vector3(24.180206, 0.1616211, 23.407429)
+
+[node name="Floor" type="CSGBox3D" parent="Room"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3918846, -0.080759436, -7.416727)
+size = Vector3(24.180206, 0.1616211, 23.321205)

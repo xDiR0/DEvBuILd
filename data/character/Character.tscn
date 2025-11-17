@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://bs72ogkvdd7d6"]
+
+[ext_resource type="Script" uid="uid://ccrvxhv2hnoqy" path="res://data/character/Character.gd" id="1_ucva2"]
+[ext_resource type="PackedScene" uid="uid://b1w6e5vh4csmu" path="res://data/models/BlackCharacter/character_scene.tscn" id="2_fjby3"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_iof21"]
+radius = 0.4
+height = 1.8
+
+[node name="Character" type="CharacterBody3D"]
+script = ExtResource("1_ucva2")
+
+[node name="BlackCharacter" parent="." instance=ExtResource("2_fjby3")]
+transform = Transform3D(-1, 0, -8.940697e-08, 0, 1, 0, 8.940697e-08, 0, -1, 0, 0.061092257, 0)
+
+[node name="Collider" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+shape = SubResource("CapsuleShape3D_iof21")
+
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5203391, -0.16757783)
+
+[node name="Camera3D" type="Camera3D" parent="Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.009534955, -0.04043165)
