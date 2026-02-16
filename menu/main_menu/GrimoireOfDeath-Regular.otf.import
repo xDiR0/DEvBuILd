@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://ddqafd1p0wck4"
-path="res://.godot/imported/GrimoireOfDeath-Regular.otf-df1a99a3ccc1b7acc318785edfa45407.fontdata"
+path="res://.godot/imported/GrimoireOfDeath-Regular.otf-b13091bc6e100de184ff777b7ffcce2f.fontdata"
 
 [deps]
 
-source_file="res://menu/GrimoireOfDeath-Regular.otf"
-dest_files=["res://.godot/imported/GrimoireOfDeath-Regular.otf-df1a99a3ccc1b7acc318785edfa45407.fontdata"]
+source_file="res://menu/main_menu/GrimoireOfDeath-Regular.otf"
+dest_files=["res://.godot/imported/GrimoireOfDeath-Regular.otf-b13091bc6e100de184ff777b7ffcce2f.fontdata"]
 
 [params]
 

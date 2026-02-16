@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://dqdskuk7n5h4b"]
 
-[ext_resource type="FontFile" uid="uid://ddqafd1p0wck4" path="res://menu/GrimoireOfDeath-Regular.otf" id="1_chmv6"]
-[ext_resource type="Texture2D" uid="uid://csxtbcjx00q01" path="res://menu/main_menu_fon.jpg" id="1_f5okj"]
-[ext_resource type="Script" uid="uid://0vtqvkpc0q3t" path="res://menu/main_menu.gd" id="1_o5w3e"]
+[ext_resource type="FontFile" uid="uid://ddqafd1p0wck4" path="res://menu/main_menu/GrimoireOfDeath-Regular.otf" id="1_chmv6"]
+[ext_resource type="Texture2D" uid="uid://csxtbcjx00q01" path="res://menu/main_menu/main_menu_fon.jpg" id="1_f5okj"]
+[ext_resource type="Script" uid="uid://0vtqvkpc0q3t" path="res://menu/main_menu/main_menu.gd" id="1_o5w3e"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_o5w3e"]
 texture = ExtResource("1_f5okj")
@@ -88,7 +88,7 @@ theme_override_font_sizes/font_size = 28
 theme_override_styles/normal = SubResource("StyleBoxFlat_cwfi3")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_f5okj")
 theme_override_styles/hover = SubResource("StyleBoxFlat_o5w3e")
-text = "OPTIONS"
+text = "SETTINGS"
 
 [node name="Button_exit" type="Button" parent="VBoxContainer" unique_id=711862450]
 layout_mode = 2
