@@ -1,0 +1,128 @@
+[gd_scene format=3 uid="uid://dqdskuk7n5h4b"]
+
+[ext_resource type="FontFile" uid="uid://ddqafd1p0wck4" path="res://menu/GrimoireOfDeath-Regular.otf" id="1_chmv6"]
+[ext_resource type="Texture2D" uid="uid://csxtbcjx00q01" path="res://menu/main_menu_fon.jpg" id="1_f5okj"]
+[ext_resource type="Script" uid="uid://0vtqvkpc0q3t" path="res://menu/main_menu.gd" id="1_o5w3e"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_o5w3e"]
+texture = ExtResource("1_f5okj")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cwfi3"]
+bg_color = Color(0.77521724, 0.5543128, 0.12660539, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0.18359375, 0.18359375, 0.18359375, 1)
+shadow_size = 1
+shadow_offset = Vector2(1.82, 2.975)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f5okj"]
+bg_color = Color(0.34375, 0.24523625, 0.056592975, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0.18359375, 0.18359375, 0.18359375, 1)
+shadow_size = 1
+shadow_offset = Vector2(1.82, 2.975)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o5w3e"]
+bg_color = Color(0.64453125, 0.4589844, 0.10416666, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0.18359375, 0.18359375, 0.18359375, 1)
+shadow_size = 1
+shadow_offset = Vector2(1.82, 2.975)
+
+[node name="Main_menu" type="Control" unique_id=1653028850]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_o5w3e")
+
+[node name="Panel" type="Panel" parent="." unique_id=242755844]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_o5w3e")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1966539398]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -131.0
+offset_top = 10.0
+offset_right = 130.99902
+offset_bottom = 143.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 8
+
+[node name="Button_start" type="Button" parent="VBoxContainer" unique_id=603288878]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxFlat_cwfi3")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_f5okj")
+theme_override_styles/hover = SubResource("StyleBoxFlat_o5w3e")
+text = "START GAME"
+
+[node name="Button_options" type="Button" parent="VBoxContainer" unique_id=1029821713]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxFlat_cwfi3")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_f5okj")
+theme_override_styles/hover = SubResource("StyleBoxFlat_o5w3e")
+text = "OPTIONS"
+
+[node name="Button_exit" type="Button" parent="VBoxContainer" unique_id=711862450]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxFlat_cwfi3")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_f5okj")
+theme_override_styles/hover = SubResource("StyleBoxFlat_o5w3e")
+text = "EXIT"
+
+[node name="Label" type="Label" parent="." unique_id=1565481409]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -176.0
+offset_top = -164.0
+offset_right = 176.0
+offset_bottom = -74.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.4, 1.4)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.5058824)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("1_chmv6")
+theme_override_font_sizes/font_size = 90
+text = "GODOT GAME"
+
+[connection signal="pressed" from="VBoxContainer/Button_start" to="." method="_on_button_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button_options" to="." method="_on_button_options_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button_exit" to="." method="_on_button_exit_pressed"]
