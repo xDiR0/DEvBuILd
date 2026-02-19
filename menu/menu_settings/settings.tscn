@@ -2,6 +2,9 @@
 
 [ext_resource type="Script" uid="uid://dusfftt1qi35u" path="res://menu/menu_settings/settings.gd" id="1_pbbjw"]
 [ext_resource type="Texture2D" uid="uid://csxtbcjx00q01" path="res://menu/main_menu/main_menu_fon.jpg" id="1_wq1ue"]
+[ext_resource type="Script" uid="uid://7ps7efiabr5t" path="res://menu/menu_settings/fullscreen_control.gd" id="3_8m6gm"]
+[ext_resource type="Script" uid="uid://cbsmwvxp4p1k7" path="res://menu/menu_settings/audio_control.gd" id="4_0emvn"]
+[ext_resource type="AudioStream" uid="uid://bpifuxn8i8jha" path="res://menu/menu_settings/sound/echoes-of-the-abyss_87954.mp3" id="4_3u8p1"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pbbjw"]
 texture = ExtResource("1_wq1ue")
@@ -37,6 +40,17 @@ shadow_color = Color(0.18359375, 0.18359375, 0.18359375, 1)
 shadow_size = 1
 shadow_offset = Vector2(1.82, 2.975)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3u8p1"]
+bg_color = Color(0.09155179, 0.08772407, 0.08607603, 1)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_3u8p1"]
+color = Color(0.78550065, 0.6171889, 0.29719263, 1)
+thickness = 5
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_0emvn"]
+color = Color(0.57396054, 0.57672936, 0.54314303, 1)
+thickness = 5
+
 [node name="settings_menu" type="Control" unique_id=1139402728]
 layout_mode = 3
 anchors_preset = 15
@@ -55,7 +69,8 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_pbbjw")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1651262184]
+[node name="SETTINGS" type="VBoxContainer" parent="." unique_id=1651262184]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -69,8 +84,9 @@ offset_bottom = 103.25
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 5
+alignment = 1
 
-[node name="SCREEN" type="Button" parent="VBoxContainer" unique_id=872334862]
+[node name="SCREEN" type="Button" parent="SETTINGS" unique_id=872334862]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -78,9 +94,9 @@ theme_override_constants/outline_size = 1
 theme_override_styles/normal = SubResource("StyleBoxFlat_wq1ue")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_pbbjw")
 theme_override_styles/hover = SubResource("StyleBoxFlat_8m6gm")
-text = "SCREEN"
+text = "  SCREEN"
 
-[node name="GRAPHICS" type="Button" parent="VBoxContainer" unique_id=399930068]
+[node name="GRAPHICS" type="Button" parent="SETTINGS" unique_id=399930068]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -88,10 +104,10 @@ theme_override_constants/outline_size = 1
 theme_override_styles/normal = SubResource("StyleBoxFlat_wq1ue")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_pbbjw")
 theme_override_styles/hover = SubResource("StyleBoxFlat_8m6gm")
-text = "GRAPHICS
+text = "  GRAPHICS
 "
 
-[node name="CONTROL" type="Button" parent="VBoxContainer" unique_id=586679730]
+[node name="CONTROL" type="Button" parent="SETTINGS" unique_id=586679730]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -99,9 +115,9 @@ theme_override_constants/outline_size = 1
 theme_override_styles/normal = SubResource("StyleBoxFlat_wq1ue")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_pbbjw")
 theme_override_styles/hover = SubResource("StyleBoxFlat_8m6gm")
-text = "CONTROL"
+text = "  CONTROL"
 
-[node name="SOUND" type="Button" parent="VBoxContainer" unique_id=193902518]
+[node name="SOUND" type="Button" parent="SETTINGS" unique_id=193902518]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -109,20 +125,167 @@ theme_override_constants/outline_size = 1
 theme_override_styles/normal = SubResource("StyleBoxFlat_wq1ue")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_pbbjw")
 theme_override_styles/hover = SubResource("StyleBoxFlat_8m6gm")
+text = "  SOUND"
+
+[node name="BACK" type="Button" parent="SETTINGS" unique_id=722608557]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_styles/normal = SubResource("StyleBoxFlat_wq1ue")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_pbbjw")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8m6gm")
+text = "  BACK"
+
+[node name="SCREEN" type="Panel" parent="." unique_id=66444283]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -167.5
+offset_top = -141.0
+offset_right = 167.5
+offset_bottom = 102.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="screen" type="Label" parent="SCREEN" unique_id=139663107]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 34.5
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.89492244, 0.89492244, 0.8949224, 1)
+theme_override_colors/font_shadow_color = Color(0.07058824, 0.07058824, 0.07058824, 0.6392157)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxFlat_3u8p1")
+text = "SCREEN"
+horizontal_alignment = 1
+
+[node name="BACK" type="Button" parent="SCREEN" unique_id=1171874146]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -53.5
+offset_top = -57.5
+offset_right = 53.5
+offset_bottom = -20.5
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_styles/normal = SubResource("StyleBoxFlat_wq1ue")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_pbbjw")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8m6gm")
+text = "  BACK"
+
+[node name="FullscreenControl" type="CheckButton" parent="SCREEN" unique_id=1360239944]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -92.0
+offset_top = -69.5
+offset_right = 73.5
+offset_bottom = -38.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Fullscreen"
+script = ExtResource("3_8m6gm")
+
+[node name="SOUND" type="Panel" parent="." unique_id=1085671540]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -167.5
+offset_top = -141.0
+offset_right = 167.5
+offset_bottom = 102.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="screen" type="Label" parent="SOUND" unique_id=968948673]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 34.5
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.89492244, 0.89492244, 0.8949224, 1)
+theme_override_colors/font_shadow_color = Color(0.07058824, 0.07058824, 0.07058824, 0.6392157)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxFlat_3u8p1")
 text = "SOUND"
+horizontal_alignment = 1
 
-[node name="BACK" type="Button" parent="VBoxContainer" unique_id=722608557]
-layout_mode = 2
+[node name="BACK" type="Button" parent="SOUND" unique_id=1382676799]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -53.5
+offset_top = -57.5
+offset_right = 53.5
+offset_bottom = -20.5
+grow_horizontal = 2
+grow_vertical = 0
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
 theme_override_styles/normal = SubResource("StyleBoxFlat_wq1ue")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_pbbjw")
 theme_override_styles/hover = SubResource("StyleBoxFlat_8m6gm")
-text = "BACK"
+text = "  BACK"
 
-[connection signal="pressed" from="VBoxContainer/SCREEN" to="." method="_on_screen_pressed"]
-[connection signal="pressed" from="VBoxContainer/GRAPHICS" to="." method="_on_graphics_pressed"]
-[connection signal="pressed" from="VBoxContainer/CONTROL" to="." method="_on_control_pressed"]
-[connection signal="pressed" from="VBoxContainer/SOUND" to="." method="_on_sound_pressed"]
-[connection signal="pressed" from="VBoxContainer/BACK" to="." method="_on_back_pressed"]
+[node name="AudioControl" type="HSlider" parent="SOUND" unique_id=964381086]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -117.5
+offset_top = -54.5
+offset_right = 117.5
+offset_bottom = -24.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/slider = SubResource("StyleBoxLine_3u8p1")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_0emvn")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_0emvn")
+min_value = -80.0
+max_value = 0.0
+script = ExtResource("4_0emvn")
+audio_bus_name = "Music"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SOUND" unique_id=94655718]
+stream = ExtResource("4_3u8p1")
+autoplay = true
+bus = &"Music"
+
+[connection signal="pressed" from="SETTINGS/SCREEN" to="." method="_on_screen_pressed"]
+[connection signal="pressed" from="SETTINGS/GRAPHICS" to="." method="_on_graphics_pressed"]
+[connection signal="pressed" from="SETTINGS/CONTROL" to="." method="_on_control_pressed"]
+[connection signal="pressed" from="SETTINGS/SOUND" to="." method="_on_sound_pressed"]
+[connection signal="pressed" from="SETTINGS/BACK" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="SCREEN/BACK" to="." method="_on_back_options_pressed"]
+[connection signal="toggled" from="SCREEN/FullscreenControl" to="SCREEN/FullscreenControl" method="_on_toggled"]
+[connection signal="pressed" from="SOUND/BACK" to="." method="_on_back_options_pressed"]
+[connection signal="value_changed" from="SOUND/AudioControl" to="SOUND/AudioControl" method="_on_value_changed"]

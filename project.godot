@@ -19,6 +19,10 @@ run/main_scene="uid://dqdskuk7n5h4b"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://another/icon.svg"
 
+[display]
+
+window/stretch/mode="canvas_items"
+
 [file_customization]
 
 folder_colors={
