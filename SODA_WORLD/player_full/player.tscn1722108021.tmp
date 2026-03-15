@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://dq5fv6kns776b"]
+
+[ext_resource type="Script" uid="uid://bflclbxwf6a7q" path="res://SODA_WORLD/player_full/player.gd" id="1_y4n5c"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gvhyq"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_y4n5c"]
+
+[node name="PLAYER" type="Node3D" unique_id=1030635555]
+
+[node name="Player" type="CharacterBody3D" parent="." unique_id=1828625760]
+script = ExtResource("1_y4n5c")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player" unique_id=253310851]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+visible = false
+shape = SubResource("CapsuleShape3D_gvhyq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Player" unique_id=1631725211]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CapsuleMesh_y4n5c")
+skeleton = NodePath("../..")
+
+[node name="Camera3D" type="Camera3D" parent="Player" unique_id=2538557]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 0)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=336868386]

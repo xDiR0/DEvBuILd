@@ -12,7 +12,7 @@ func _process(delta: float) -> void:
 
 
 func _on_button_start_pressed() -> void:
-	get_tree().change_scene_to_file("res://SODA_WORLD/start_location.tscn")
+	get_tree().change_scene_to_file("res://SODA_WORLD/game/Room1.tscn")
 
 
 func _on_button_options_pressed() -> void:

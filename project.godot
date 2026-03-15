@@ -19,15 +19,21 @@ run/main_scene="uid://dqdskuk7n5h4b"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://another/icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://ctlrfjywt8f41"
+driver/enable_input=true
+
 [autoload]
 
 MusicManager="*uid://r6c4xgg1hhli"
+VoiceManager="*uid://dh6mog1gf6r2c"
 
 [display]
 
 window/size/mode=3
+window/size/borderless=true
 window/stretch/mode="canvas_items"
-window/vsync/vsync_mode=0
 
 [file_customization]
 
