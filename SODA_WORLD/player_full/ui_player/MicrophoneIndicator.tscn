@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dimj6vkg6thly" path="res://SODA_WORLD/player_full/ui_player/MicrophoneIndicator.gd" id="1_bebi3"]
 
-[node name="Control" type="Control" unique_id=1204227680]
+[node name="MicrophoneIndicator" type="Control" unique_id=1204227680 node_paths=PackedStringArray("progress_bar", "status_label")]
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -16,6 +16,8 @@ offset_bottom = 283.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_bebi3")
+progress_bar = NodePath("ProgressBar")
+status_label = NodePath("Label")
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=1978837885]
 layout_mode = 0

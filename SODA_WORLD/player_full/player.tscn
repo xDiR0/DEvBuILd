@@ -21,18 +21,6 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector3(0, 1.6, 0)]
 }
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Camera3D:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
-}
 
 [sub_resource type="Animation" id="Animation_bdayn"]
 resource_name = "idle"
@@ -44,22 +32,10 @@ tracks/0/path = NodePath("Camera3D:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1, 2, 3, 5.1666665),
+"times": PackedFloat32Array(0, 1.1333333, 2.4, 3.7, 5.1666665),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(0, 1.6, 0), Vector3(0, 1.65, 0), Vector3(0, 1.6, 0), Vector3(0, 1.65, 0), Vector3(0, 1.6, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = false
-tracks/1/path = NodePath("Camera3D:rotation")
-tracks/1/interp = 2
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1.5, 3, 4.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 0.06981317, 0), Vector3(0, -0.06981317, 0), Vector3(0, 0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_imdcf"]
@@ -75,18 +51,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(0, 1.6, 0), Vector3(-0.05, 1.7, 0), Vector3(0, 1.6, 0), Vector3(0.05, 1.7, 0), Vector3(0, 1.6, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = false
-tracks/1/path = NodePath("Camera3D:rotation")
-tracks/1/interp = 2
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.25, 0.5, 0.76666665, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 0, 0.017453292), Vector3(0, 0, 0), Vector3(0, 0, -0.017453292), Vector3(0, 0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_imdcf"]

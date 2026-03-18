@@ -12,7 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://djfuoowp3qxi3" path="res://SODA_WORLD/texture/floor/1K-tiling_39_roughness.jpg" id="6_1qa5o"]
 [ext_resource type="Texture2D" uid="uid://cirp2ttk4t83v" path="res://SODA_WORLD/texture/wall/stonewall_19_roughness-1K.png" id="6_vcjaf"]
 [ext_resource type="Texture2D" uid="uid://qdclycidvvb6" path="res://SODA_WORLD/texture/floor/1K-tiling_39_normal.jpg" id="11_qngob"]
-[ext_resource type="Texture2D" uid="uid://dvbtbqw2nqcic" path="res://SODA_WORLD/game/satara_night_no_lamps_4k.exr" id="13_min2a"]
+[ext_resource type="Script" uid="uid://pmje42drymbk" path="res://SODA_WORLD/game/door.gd" id="14_451bl"]
+[ext_resource type="PackedScene" uid="uid://6mpgncx7l2ma" path="res://SODA_WORLD/game/door__metal__old_15_mb.glb" id="14_n3766"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_451bl"]
 albedo_texture = ExtResource("2_em58i")
@@ -26,6 +27,9 @@ heightmap_texture = ExtResource("4_min2a")
 uv1_scale = Vector3(0.91, 0.91, 0.91)
 uv1_triplanar = true
 uv1_world_triplanar = true
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_n3766"]
+lightmap_size_hint = Vector2i(17, 19)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_min2a"]
 albedo_color = Color(0.22440474, 0.2265625, 0.21536791, 1)
@@ -48,6 +52,63 @@ material = SubResource("StandardMaterial3D_min2a")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kb8nq"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_n3766"]
+size = Vector3(0.699852, 0.7871628, 0.51852417)
+
+[sub_resource type="Animation" id="Animation_n3766"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 9.553426e-16)]
+}
+
+[sub_resource type="Animation" id="Animation_451bl"]
+resource_name = "close"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.4, 4),
+"transitions": PackedFloat32Array(1, 0.7845841, 0.7845841),
+"update": 0,
+"values": [Vector3(-9.881973e-16, -2.4958208, -1.7763568e-15), Vector3(0, -2.565634, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_vcjaf"]
+resource_name = "open"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -2.6162486, 0), Vector3(-9.881973e-16, -2.4958208, -1.7763568e-15)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_451bl"]
+_data = {
+&"RESET": SubResource("Animation_n3766"),
+&"close": SubResource("Animation_451bl"),
+&"open": SubResource("Animation_vcjaf")
+}
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_em58i"]
 albedo_texture = ExtResource("2_xcpqh")
 metallic = 1.0
@@ -63,30 +124,27 @@ uv1_triplanar = true
 uv1_world_triplanar = true
 stencil_flags = 2
 
-[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_n3766"]
-panorama = ExtResource("13_min2a")
-
-[sub_resource type="Sky" id="Sky_vcjaf"]
-sky_material = SubResource("PanoramaSkyMaterial_n3766")
-
-[sub_resource type="Environment" id="Environment_qngob"]
-background_mode = 2
-sky = SubResource("Sky_vcjaf")
-ambient_light_source = 3
-reflected_light_source = 2
-ssr_enabled = true
-sdfgi_enabled = true
-sdfgi_use_occlusion = true
-glow_enabled = true
-volumetric_fog_enabled = true
-volumetric_fog_density = 0.025
-
 [node name="Room1" type="Node3D" unique_id=128681543]
 
 [node name="PLAYER" parent="." unique_id=1030635555 instance=ExtResource("1_63ygv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.22674704, 0, 0.4191364)
 
 [node name="room" type="StaticBody3D" parent="." unique_id=872014039]
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="room" unique_id=374391597]
+transform = Transform3D(0.11, -6.950111e-08, 4.808253e-09, 4.006877e-09, 1.325, 2.4041265e-09, -4.8082525e-09, 5.7917596e-08, 0.11, -0.60200006, 1.2550001, -7.179748)
+material_override = SubResource("StandardMaterial3D_451bl")
+mesh = SubResource("CylinderMesh_n3766")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="room" unique_id=621110401]
+transform = Transform3D(0.11, -6.950111e-08, 4.808253e-09, 4.006877e-09, 1.325, 2.4041265e-09, -4.8082525e-09, 5.7917596e-08, 0.11, 0.6068793, 1.2550001, -7.179748)
+material_override = SubResource("StandardMaterial3D_451bl")
+mesh = SubResource("CylinderMesh_n3766")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="room" unique_id=1662931246]
+transform = Transform3D(1.092785e-09, 0.66999996, 8.086608e-09, -0.125, -4.881107e-09, 4.043304e-09, -5.4639235e-09, -2.928663e-08, 0.185, 0.00016820431, 2.6146066, -7.132084)
+material_override = SubResource("StandardMaterial3D_451bl")
+mesh = SubResource("CylinderMesh_n3766")
 
 [node name="wall" type="StaticBody3D" parent="room" unique_id=1956459470]
 transform = Transform3D(-2.1855694e-08, 1, 0, -0.5, -4.371139e-08, 0, 0, 0, 1, -3, 2.185, 0)
@@ -105,7 +163,7 @@ shape = SubResource("BoxShape3D_kb8nq")
 transform = Transform3D(-2.1855694e-08, 1, 0, -0.5, -4.371139e-08, 0, 0, 0, 1, 3, 2.185, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="room/wall2" unique_id=276673707]
-transform = Transform3D(14, 0, 0, 0, 0.1, 0, 0, 0, 30, 0, 0, 0)
+transform = Transform3D(14, 0, 0, 0, 0.1, 0, 0, 0, 30, 0.0005078316, 0.0005044937, 0.0009226799)
 material_override = SubResource("StandardMaterial3D_451bl")
 mesh = SubResource("BoxMesh_xuyu6")
 skeleton = NodePath("../../..")
@@ -116,6 +174,7 @@ shape = SubResource("BoxShape3D_kb8nq")
 
 [node name="wall3" type="StaticBody3D" parent="room" unique_id=1695726242]
 transform = Transform3D(9.553427e-16, -4.371139e-08, 0.6, -0.5, -4.371139e-08, 0, 2.1855694e-08, -1, -2.6226834e-08, -0.34, 2.185, 7.235)
+visible = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="room/wall3" unique_id=2011321981]
 transform = Transform3D(14, 0, 0, 0, 0.1, 0, 0, 0, 30, 0, 0, 0)
@@ -127,18 +186,38 @@ skeleton = NodePath("../../..")
 transform = Transform3D(14, 0, 0, 0, 0.1, 0, 0, 0, 30, 0, 0, 0)
 shape = SubResource("BoxShape3D_kb8nq")
 
-[node name="wall4" type="StaticBody3D" parent="room" unique_id=941763196]
+[node name="wall4" type="CSGCombiner3D" parent="room" unique_id=801397497]
 transform = Transform3D(9.553427e-16, -4.371139e-08, 0.6, -0.5, -4.371139e-08, 0, 2.1855694e-08, -1, -2.6226834e-08, -0.34, 2.185, -7.245)
+use_collision = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="room/wall4" unique_id=1132752066]
-transform = Transform3D(14, 0, 0, 0, 0.1, 0, 0, 0, 30, 0, 0, 0)
-material_override = SubResource("StandardMaterial3D_451bl")
-mesh = SubResource("BoxMesh_xuyu6")
-skeleton = NodePath("../../..")
+[node name="wall" type="CSGBox3D" parent="room/wall4" unique_id=1276928647]
+transform = Transform3D(11.12, 0, 0, 0, 0.1, 0, 0, -4.440892e-16, 12.39, 0, 0, 0)
+material = SubResource("StandardMaterial3D_451bl")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="room/wall4" unique_id=1487967239]
-transform = Transform3D(14, 0, 0, 0, 0.1, 0, 0, 0, 30, 0, 0, 0)
-shape = SubResource("BoxShape3D_kb8nq")
+[node name="cutter" type="CSGBox3D" parent="room/wall4" unique_id=1824191267]
+transform = Transform3D(-8.480009e-08, 0, 5.145, -5.1159077e-13, 0.55, 0, -1.94, 0, -2.2489849e-07, 1.798666, -0.09581566, 0.56492436)
+operation = 2
+
+[node name="Door" type="Node3D" parent="room/wall4" unique_id=908089025]
+transform = Transform3D(-7.285231e-08, -2, 4.371139e-08, 0, -8.742278e-08, -1, 1.6666666, -8.742278e-08, 1.9106855e-15, 1.6501377, -0.050864697, 0.5851199)
+script = ExtResource("14_451bl")
+
+[node name="DoorPivot" type="Node3D" parent="room/wall4/Door" unique_id=291686874]
+transform = Transform3D(1, -9.553426e-16, 0, 9.553426e-16, 1, 0, 0, 0, 1, -0.58563536, 0, 0.034082413)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="room/wall4/Door/DoorPivot" unique_id=682051557]
+transform = Transform3D(1, 1.642028e-15, 0, 9.553426e-16, 1, 0, 0, 0, 1, 0.5888858, -1.1920929e-07, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="room/wall4/Door/DoorPivot/StaticBody3D" unique_id=872357393]
+transform = Transform3D(1.74, 2.9353512e-12, 8.881784e-16, 1.6622962e-15, 3.295, 9.1926466e-14, 0, 0, 0.29, 0.002250189, -0.07570553, 0)
+shape = SubResource("BoxShape3D_n3766")
+
+[node name="MeshInstance3D" parent="room/wall4/Door/DoorPivot" unique_id=1439883581 instance=ExtResource("14_n3766")]
+transform = Transform3D(-2.3604152e-07, 4.6525717e-14, 5.4000006, 0, 5.4, 2.4528556e-14, -5.4000006, 0, -2.3604156e-07, 0.5888857, -1.3507675, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="room/wall4/Door" unique_id=2042151063]
+root_node = NodePath("../DoorPivot")
+libraries/ = SubResource("AnimationLibrary_451bl")
 
 [node name="floor2" type="StaticBody3D" parent="room" unique_id=892355799]
 
@@ -154,6 +233,7 @@ shape = SubResource("BoxShape3D_kb8nq")
 
 [node name="floor3" type="StaticBody3D" parent="room" unique_id=1586061125]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.865, 0)
+visible = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="room/floor3" unique_id=199197774]
 transform = Transform3D(14, 0, 0, 0, 0.1, 0, 0, 0, 30, 0, 0, 0)
@@ -197,5 +277,4 @@ spot_range = 9.576
 spot_attenuation = 1.44
 spot_angle = 33.36
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=74880871]
-environment = SubResource("Environment_qngob")
+[node name="Node3D" type="Node3D" parent="." unique_id=646247882]

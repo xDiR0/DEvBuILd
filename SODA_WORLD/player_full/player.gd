@@ -17,7 +17,7 @@ func _ready():
 func _input(event):
 	if event is InputEventMouseMotion:
 		camera_3d.rotation.x -= event.relative.y * mouse_sensitivity
-		camera_3d.rotation.x = clamp(camera_3d.rotation.x, -1.5, 1.5)
+		rotation.x = clamp(rotation.x, -1.5, 1.5)
 		
 		# ГОРИЗОНТАЛЬ (влево/вправо) - вращаем персонажа
 		rotation.y -= event.relative.x * mouse_sensitivity
