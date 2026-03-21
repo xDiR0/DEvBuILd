@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://r6c4xgg1hhli"]
+
+[ext_resource type="AudioStream" uid="uid://bpifuxn8i8jha" path="res://menu/menu_settings/sound/echoes-of-the-abyss_87954.mp3" id="1_eosdl"]
+
+[node name="music_manager" type="Control" unique_id=2140907086]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=778303965]
+stream = ExtResource("1_eosdl")
+autoplay = true
+bus = &"Music"
