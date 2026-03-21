@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://djfuoowp3qxi3"
-path.s3tc="res://.godot/imported/1K-tiling_39_roughness.jpg-efe95708ed62053d5471fe86becfd2fc.s3tc.ctex"
+path.s3tc="res://.godot/imported/1K-tiling_39_roughness.jpg-4036077932b062a46062a186d7f115ef.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://SODA_WORLD/texture/floor/1K-tiling_39_roughness.jpg"
-dest_files=["res://.godot/imported/1K-tiling_39_roughness.jpg-efe95708ed62053d5471fe86becfd2fc.s3tc.ctex"]
+source_file="res://WORLD/texture/floor/1K-tiling_39_roughness.jpg"
+dest_files=["res://.godot/imported/1K-tiling_39_roughness.jpg-4036077932b062a46062a186d7f115ef.s3tc.ctex"]
 
 [params]
 

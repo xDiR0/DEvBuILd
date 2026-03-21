@@ -1,19 +1,19 @@
 [gd_scene format=3 uid="uid://cac1o4odv8l5x"]
 
-[ext_resource type="PackedScene" uid="uid://dq5fv6kns776b" path="res://SODA_WORLD/player_full/player.tscn" id="1_63ygv"]
-[ext_resource type="Texture2D" uid="uid://cycjsg3cst5gx" path="res://SODA_WORLD/texture/wall/stonewall_19_basecolor-1K.png" id="2_em58i"]
-[ext_resource type="Texture2D" uid="uid://dighumhkxutca" path="res://SODA_WORLD/texture/floor/1K-tiling_39_basecolor.jpg" id="2_xcpqh"]
-[ext_resource type="Texture2D" uid="uid://yhajwc0umgc" path="res://SODA_WORLD/texture/floor/1K-tiling_39_ambientocclusion.jpg" id="3_k7dn7"]
-[ext_resource type="Texture2D" uid="uid://8edqpwsd101v" path="res://SODA_WORLD/texture/wall/stonewall_19_ambientocclusion-1K.png" id="3_qngob"]
-[ext_resource type="Texture2D" uid="uid://bqtl4axtijyx0" path="res://SODA_WORLD/texture/wall/stonewall_19_height-1K.png" id="4_min2a"]
-[ext_resource type="Texture2D" uid="uid://kbxtxqcst1bi" path="res://SODA_WORLD/texture/floor/1K-tiling_39_height.jpg" id="4_uuaot"]
-[ext_resource type="Texture2D" uid="uid://c7bff7yh2eiog" path="res://SODA_WORLD/texture/floor/1K-tiling_39_metallic.jpg" id="5_5icki"]
-[ext_resource type="Texture2D" uid="uid://co5a72cbe8gn2" path="res://SODA_WORLD/texture/wall/stonewall_19_normal-1K.png" id="5_n3766"]
-[ext_resource type="Texture2D" uid="uid://djfuoowp3qxi3" path="res://SODA_WORLD/texture/floor/1K-tiling_39_roughness.jpg" id="6_1qa5o"]
-[ext_resource type="Texture2D" uid="uid://cirp2ttk4t83v" path="res://SODA_WORLD/texture/wall/stonewall_19_roughness-1K.png" id="6_vcjaf"]
-[ext_resource type="Texture2D" uid="uid://qdclycidvvb6" path="res://SODA_WORLD/texture/floor/1K-tiling_39_normal.jpg" id="11_qngob"]
-[ext_resource type="Script" uid="uid://pmje42drymbk" path="res://SODA_WORLD/game/door.gd" id="14_451bl"]
-[ext_resource type="PackedScene" uid="uid://6mpgncx7l2ma" path="res://SODA_WORLD/game/door__metal__old_15_mb.glb" id="14_n3766"]
+[ext_resource type="PackedScene" uid="uid://dq5fv6kns776b" path="res://WORLD/player_full/player.tscn" id="1_63ygv"]
+[ext_resource type="Texture2D" uid="uid://cycjsg3cst5gx" path="res://WORLD/texture/wall/stonewall_19_basecolor-1K.png" id="2_em58i"]
+[ext_resource type="Texture2D" uid="uid://dighumhkxutca" path="res://WORLD/texture/floor/1K-tiling_39_basecolor.jpg" id="2_xcpqh"]
+[ext_resource type="Texture2D" uid="uid://yhajwc0umgc" path="res://WORLD/texture/floor/1K-tiling_39_ambientocclusion.jpg" id="3_k7dn7"]
+[ext_resource type="Texture2D" uid="uid://8edqpwsd101v" path="res://WORLD/texture/wall/stonewall_19_ambientocclusion-1K.png" id="3_qngob"]
+[ext_resource type="Texture2D" uid="uid://bqtl4axtijyx0" path="res://WORLD/texture/wall/stonewall_19_height-1K.png" id="4_min2a"]
+[ext_resource type="Texture2D" uid="uid://kbxtxqcst1bi" path="res://WORLD/texture/floor/1K-tiling_39_height.jpg" id="4_uuaot"]
+[ext_resource type="Texture2D" uid="uid://c7bff7yh2eiog" path="res://WORLD/texture/floor/1K-tiling_39_metallic.jpg" id="5_5icki"]
+[ext_resource type="Texture2D" uid="uid://co5a72cbe8gn2" path="res://WORLD/texture/wall/stonewall_19_normal-1K.png" id="5_n3766"]
+[ext_resource type="Texture2D" uid="uid://djfuoowp3qxi3" path="res://WORLD/texture/floor/1K-tiling_39_roughness.jpg" id="6_1qa5o"]
+[ext_resource type="Texture2D" uid="uid://cirp2ttk4t83v" path="res://WORLD/texture/wall/stonewall_19_roughness-1K.png" id="6_vcjaf"]
+[ext_resource type="Texture2D" uid="uid://qdclycidvvb6" path="res://WORLD/texture/floor/1K-tiling_39_normal.jpg" id="11_qngob"]
+[ext_resource type="Script" uid="uid://pmje42drymbk" path="res://WORLD/game/door.gd" id="14_451bl"]
+[ext_resource type="PackedScene" uid="uid://6mpgncx7l2ma" path="res://WORLD/game/door__metal__old_15_mb.glb" id="14_n3766"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_451bl"]
 albedo_texture = ExtResource("2_em58i")
@@ -108,6 +108,9 @@ _data = {
 &"close": SubResource("Animation_451bl"),
 &"open": SubResource("Animation_vcjaf")
 }
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_31bmp"]
+size = Vector3(3.2126465, 2.1401062, 1.8201599)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_em58i"]
 albedo_texture = ExtResource("2_xcpqh")
@@ -216,6 +219,12 @@ transform = Transform3D(-2.3604152e-07, 4.6525717e-14, 5.4000006, 0, 5.4, 2.4528
 
 [node name="Door_animations" type="AnimationPlayer" parent="room/wall4/Door/DoorPivot" unique_id=2042151063]
 libraries/ = SubResource("AnimationLibrary_451bl")
+
+[node name="Activation_zone" type="Area3D" parent="room/wall4/Door/DoorPivot" unique_id=2087908990]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="room/wall4/Door/DoorPivot/Activation_zone" unique_id=1706753379]
+transform = Transform3D(2, 3.284056e-15, 0, 1.9106853e-15, 2, 0, 0, 0, 2, 0.49463952, 0.553131, 1.5971985)
+shape = SubResource("BoxShape3D_31bmp")
 
 [node name="floor2" type="StaticBody3D" parent="room" unique_id=892355799]
 

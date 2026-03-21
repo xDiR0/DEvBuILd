@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cycjsg3cst5gx"
-path.s3tc="res://.godot/imported/stonewall_19_basecolor-1K.png-70e4bde7bc8528610fb5616b26faac88.s3tc.ctex"
+path.s3tc="res://.godot/imported/stonewall_19_basecolor-1K.png-c7623b16b03a4993b4d4e3f4dc445a5d.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://SODA_WORLD/texture/wall/stonewall_19_basecolor-1K.png"
-dest_files=["res://.godot/imported/stonewall_19_basecolor-1K.png-70e4bde7bc8528610fb5616b26faac88.s3tc.ctex"]
+source_file="res://WORLD/texture/wall/stonewall_19_basecolor-1K.png"
+dest_files=["res://.godot/imported/stonewall_19_basecolor-1K.png-c7623b16b03a4993b4d4e3f4dc445a5d.s3tc.ctex"]
 
 [params]
 
