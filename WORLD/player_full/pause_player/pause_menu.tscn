@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://dia6gxdds6fkl"]
+
+[ext_resource type="FontFile" uid="uid://ddqafd1p0wck4" path="res://menu/main_menu/GrimoireOfDeath-Regular.otf" id="1_30722"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_30722"]
+bg_color = Color(0, 0, 0, 0.3137255)
+
+[sub_resource type="LabelSettings" id="LabelSettings_yx2ef"]
+font = ExtResource("1_30722")
+font_size = 25
+
+[node name="Control" type="Control" unique_id=1386667048]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="." unique_id=131634356]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_30722")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=35054880]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -86.0
+offset_top = -124.0
+offset_right = 86.0
+offset_bottom = 137.75
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer" unique_id=1831283372]
+layout_mode = 2
+text = "settings"
+label_settings = SubResource("LabelSettings_yx2ef")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ContinueButton" type="Button" parent="Panel/VBoxContainer" unique_id=1299704709]
+layout_mode = 2
+text = "Continue"
+
+[node name="SettingsButton" type="Button" parent="Panel/VBoxContainer" unique_id=902823520]
+layout_mode = 2
+text = "Settings"
+
+[node name="SaveAndExitButton" type="Button" parent="Panel/VBoxContainer" unique_id=2111104713]
+layout_mode = 2
+text = "Save and exit"
+
+[node name="MainMenuButton" type="Button" parent="Panel/VBoxContainer" unique_id=1025758467]
+layout_mode = 2
+text = "Menu"

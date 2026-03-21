@@ -13,7 +13,6 @@ extends CharacterBody3D
 func _ready():
 # Импорт мыши //
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-
 func _input(event):
 	if event is InputEventMouseMotion:
 		camera_3d.rotation.x -= event.relative.y * mouse_sensitivity
