@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://yhajwc0umgc"
-path.s3tc="res://.godot/imported/1K-tiling_39_ambientocclusion.jpg-5620b16a83665cde13ea96c49d1a950a.s3tc.ctex"
+path.s3tc="res://.godot/imported/1K-tiling_39_ambientocclusion.jpg-01353892fc38f237c801fa57068d2863.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://SODA_WORLD/texture/floor/1K-tiling_39_ambientocclusion.jpg"
-dest_files=["res://.godot/imported/1K-tiling_39_ambientocclusion.jpg-5620b16a83665cde13ea96c49d1a950a.s3tc.ctex"]
+source_file="res://WORLD/texture/floor/1K-tiling_39_ambientocclusion.jpg"
+dest_files=["res://.godot/imported/1K-tiling_39_ambientocclusion.jpg-01353892fc38f237c801fa57068d2863.s3tc.ctex"]
 
 [params]
 

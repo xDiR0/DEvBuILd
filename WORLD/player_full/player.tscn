@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dq5fv6kns776b"]
 
-[ext_resource type="Script" uid="uid://bflclbxwf6a7q" path="res://SODA_WORLD/player_full/player.gd" id="1_y4n5c"]
-[ext_resource type="PackedScene" uid="uid://dwucrsjapwm6c" path="res://SODA_WORLD/player_full/ui_player/MicrophoneIndicator.tscn" id="2_bribb"]
+[ext_resource type="Script" uid="uid://bflclbxwf6a7q" path="res://WORLD/player_full/player.gd" id="1_y4n5c"]
+[ext_resource type="PackedScene" uid="uid://dwucrsjapwm6c" path="res://WORLD/player_full/ui_player/MicrophoneIndicator.tscn" id="2_bribb"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gvhyq"]
 
