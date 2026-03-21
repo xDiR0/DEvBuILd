@@ -24,6 +24,10 @@ config/icon="res://another/icon.svg"
 buses/default_bus_layout="uid://ctlrfjywt8f41"
 driver/enable_input=true
 
+[autoload]
+
+VoiceManager="*uid://o23brhqiux6y"
+
 [display]
 
 window/size/borderless=true

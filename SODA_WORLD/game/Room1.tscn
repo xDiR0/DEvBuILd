@@ -214,7 +214,7 @@ shape = SubResource("BoxShape3D_n3766")
 [node name="MeshInstance3D" parent="room/wall4/Door/DoorPivot" unique_id=1439883581 instance=ExtResource("14_n3766")]
 transform = Transform3D(-2.3604152e-07, 4.6525717e-14, 5.4000006, 0, 5.4, 2.4528556e-14, -5.4000006, 0, -2.3604156e-07, 0.5888857, -1.3507675, 0)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="room/wall4/Door/DoorPivot" unique_id=2042151063]
+[node name="Door_animations" type="AnimationPlayer" parent="room/wall4/Door/DoorPivot" unique_id=2042151063]
 libraries/ = SubResource("AnimationLibrary_451bl")
 
 [node name="floor2" type="StaticBody3D" parent="room" unique_id=892355799]
