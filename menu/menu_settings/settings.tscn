@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://8fekpcc3hgjn"]
 
-[ext_resource type="Script" uid="uid://bh1akoww8aeas" path="res://menu/menu_settings/settings_pause.gd" id="1_0emvn"]
+[ext_resource type="Script" uid="uid://dusfftt1qi35u" path="res://menu/menu_settings/settings.gd" id="1_0emvn"]
 [ext_resource type="Texture2D" uid="uid://csxtbcjx00q01" path="res://menu/main_menu/main_menu_fon.jpg" id="1_wq1ue"]
 [ext_resource type="Script" uid="uid://7ps7efiabr5t" path="res://menu/menu_settings/fullscreen_control.gd" id="3_8m6gm"]
 [ext_resource type="Script" uid="uid://cbsmwvxp4p1k7" path="res://menu/menu_settings/audio_control.gd" id="4_0emvn"]
@@ -70,7 +70,6 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_pbbjw")
 
 [node name="SETTINGS" type="VBoxContainer" parent="." unique_id=1651262184]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -138,6 +137,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_8m6gm")
 text = "  BACK"
 
 [node name="SCREEN" type="Panel" parent="." unique_id=66444283]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
