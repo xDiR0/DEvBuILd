@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://6mpgncx7l2ma"
-path="res://.godot/imported/door__metal__old_15_mb.glb-13e8d2f0319ba4ae24744dd4ae0f7cd3.scn"
+path="res://.godot/imported/door__metal__old_15_mb.glb-403df9ec7efb49bcf106c64de5f5e3ff.scn"
 
 [deps]
 
-source_file="res://SODA_WORLD/game/door__metal__old_15_mb.glb"
-dest_files=["res://.godot/imported/door__metal__old_15_mb.glb-13e8d2f0319ba4ae24744dd4ae0f7cd3.scn"]
+source_file="res://WORLD/game/door__metal__old_15_mb.glb"
+dest_files=["res://.godot/imported/door__metal__old_15_mb.glb-403df9ec7efb49bcf106c64de5f5e3ff.scn"]
 
 [params]
 

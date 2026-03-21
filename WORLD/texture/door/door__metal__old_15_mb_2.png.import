@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://oh7uim00j0fy"
-path.s3tc="res://.godot/imported/door__metal__old_15_mb_2.png-7c9e1f50cbbd47b064d07ce22b3872d2.s3tc.ctex"
+path.s3tc="res://.godot/imported/door__metal__old_15_mb_2.png-5affe6ea2affdec7d69cba65112960d6.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://SODA_WORLD/texture/door/door__metal__old_15_mb_2.png"
-dest_files=["res://.godot/imported/door__metal__old_15_mb_2.png-7c9e1f50cbbd47b064d07ce22b3872d2.s3tc.ctex"]
+source_file="res://WORLD/texture/door/door__metal__old_15_mb_2.png"
+dest_files=["res://.godot/imported/door__metal__old_15_mb_2.png-5affe6ea2affdec7d69cba65112960d6.s3tc.ctex"]
 
 [params]
 
