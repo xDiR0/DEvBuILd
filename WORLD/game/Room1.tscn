@@ -109,6 +109,8 @@ _data = {
 &"open": SubResource("Animation_vcjaf")
 }
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_31bmp"]
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_em58i"]
 albedo_texture = ExtResource("2_xcpqh")
 metallic = 1.0
@@ -250,6 +252,12 @@ transform = Transform3D(-2.3604152e-07, 4.6525717e-14, 5.4000006, 0, 5.4, 2.4528
 
 [node name="Door_animations" type="AnimationPlayer" parent="room/wall4/Door/DoorPivot" unique_id=2042151063]
 libraries/ = SubResource("AnimationLibrary_451bl")
+
+[node name="ActivationZone" type="Area3D" parent="room/wall4/Door" unique_id=79306287]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="room/wall4/Door/ActivationZone" unique_id=633647410]
+transform = Transform3D(5.205, -2.7370567e-15, 0, 4.972558e-15, 2.865, 0, 0, 0, 6.735, 0, 0, 0)
+shape = SubResource("CylinderShape3D_31bmp")
 
 [node name="floor2" type="StaticBody3D" parent="room" unique_id=892355799]
 
