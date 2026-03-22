@@ -2,11 +2,7 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<< HEAD
-uid="uid://l01amiv4vihu"
-=======
-uid="uid://ca3ibvwtp2yh6"
->>>>>>> 33196e3aec0d98d5d0638fe2d7daa36f175665ca
+uid="uid://cka4j3lyb30cy"
 path.s3tc="res://.godot/imported/door__metal__old_15_mb_2.png-29b8cb656edcc887bd4ceee160651316.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
@@ -33,13 +29,8 @@ compress/normal_map=1
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-<<<<<<< HEAD
 roughness/mode=1
 roughness/src_normal="res://WORLD/game/door__metal__old_15_mb_2.png"
-=======
-roughness/mode=0
-roughness/src_normal=""
->>>>>>> 33196e3aec0d98d5d0638fe2d7daa36f175665ca
 process/channel_remap/red=0
 process/channel_remap/green=1
 process/channel_remap/blue=2

@@ -14,6 +14,11 @@
 [ext_resource type="Texture2D" uid="uid://qdclycidvvb6" path="res://WORLD/texture/floor/1K-tiling_39_normal.jpg" id="11_qngob"]
 [ext_resource type="Script" uid="uid://pmje42drymbk" path="res://WORLD/game/door.gd" id="14_451bl"]
 [ext_resource type="PackedScene" uid="uid://6mpgncx7l2ma" path="res://WORLD/game/door__metal__old_15_mb.glb" id="14_n3766"]
+[ext_resource type="PackedScene" uid="uid://cqxm4sj4a6jv4" path="res://WORLD/game/radiator_metal_-_13mb.glb" id="15_kw0w7"]
+[ext_resource type="PackedScene" uid="uid://c1o86yqkettfb" path="res://WORLD/game/ceiling_lamp_-_11mb.glb" id="16_chgw8"]
+[ext_resource type="PackedScene" uid="uid://dm0vabvr0tnhj" path="res://WORLD/game/industrial_standing_light.glb" id="17_2xpjq"]
+[ext_resource type="Texture2D" uid="uid://dvbtbqw2nqcic" path="res://WORLD/game/satara_night_no_lamps_4k.exr" id="17_20fbc"]
+[ext_resource type="PackedScene" uid="uid://dh57puuthw5bx" path="res://WORLD/game/old_window_gameready.glb" id="17_wyfy2"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_451bl"]
 albedo_texture = ExtResource("2_em58i")
@@ -126,6 +131,9 @@ uv1_triplanar = true
 uv1_world_triplanar = true
 stencil_flags = 2
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_kw0w7"]
+size = Vector3(7.4494476, 5.086609, 1.506958)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_24r27"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_0k2b0"]
@@ -157,6 +165,22 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_0k2b0")
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_20fbc"]
+panorama = ExtResource("17_20fbc")
+
+[sub_resource type="Sky" id="Sky_2xpjq"]
+sky_material = SubResource("PanoramaSkyMaterial_20fbc")
+
+[sub_resource type="Environment" id="Environment_wyfy2"]
+background_mode = 2
+sky = SubResource("Sky_2xpjq")
+ambient_light_source = 3
+reflected_light_source = 2
+tonemap_mode = 2
+ssr_enabled = true
+sdfgi_enabled = true
+volumetric_fog_enabled = true
 
 [node name="Room1" type="Node3D" unique_id=128681543]
 
@@ -247,7 +271,7 @@ transform = Transform3D(1, 1.642028e-15, 0, 9.553426e-16, 1, 0, 0, 0, 1, 0.58888
 transform = Transform3D(1.74, 2.9353512e-12, 8.881784e-16, 1.6622962e-15, 3.295, 9.1926466e-14, 0, 0, 0.29, 0.002250189, -0.07570553, 0)
 shape = SubResource("BoxShape3D_n3766")
 
-[node name="MeshInstance3D" parent="room/wall4/Door/DoorPivot" unique_id=1439883581 instance=ExtResource("14_n3766")]
+[node name="MeshInstance3D" parent="room/wall4/Door/DoorPivot" unique_id=2042592024 instance=ExtResource("14_n3766")]
 transform = Transform3D(-2.3604152e-07, 4.6525717e-14, 5.4000006, 0, 5.4, 2.4528556e-14, -5.4000006, 0, -2.3604156e-07, 0.5888857, -1.3507675, 0)
 
 [node name="Door_animations" type="AnimationPlayer" parent="room/wall4/Door/DoorPivot" unique_id=2042151063]
@@ -283,43 +307,65 @@ skeleton = NodePath("../../..")
 transform = Transform3D(14, 0, 0, 0, 0.1, 0, 0, 0, 30, 0, 0, 0)
 shape = SubResource("BoxShape3D_kb8nq")
 
-[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=2050286825]
-transform = Transform3D(-0.19137836, 0.9653212, -0.17756484, 0.006359928, 0.18212451, 0.9832549, 0.98149574, 0.18704441, -0.040994063, -0.9, 4.61, 0)
-light_color = Color(0.9296875, 1, 0.859375, 1)
-light_energy = 10.269
-light_size = 0.262
-light_specular = 6.972
-shadow_enabled = true
-spot_range = 8.056
-spot_attenuation = 1.84
-spot_angle = 30.52
+[node name="Radiator" type="StaticBody3D" parent="room" unique_id=1139921937]
+transform = Transform3D(-2.1855694e-10, 0, -0.005, 0, 0.005, 0, 0.005, 0, -2.1855694e-10, 2.6507766, 0, 0)
 
-[node name="SpotLight3D3" type="SpotLight3D" parent="." unique_id=1186797116]
-transform = Transform3D(0.3372889, 0.63271314, 0.6970727, 0.23653369, -0.7736669, 0.5877852, 0.9112014, -0.033372283, -0.41060722, 2.535, 4.61, 3.02)
-light_color = Color(0.9296875, 1, 0.859375, 1)
-light_energy = 10.269
-light_size = 0.262
-light_specular = 6.972
-shadow_enabled = true
-spot_range = 16.585
-spot_attenuation = 1.89
-spot_angle = 25.42
+[node name="Sketchfab_Scene" parent="room/Radiator" unique_id=1227851934 instance=ExtResource("15_kw0w7")]
+transform = Transform3D(1, 0, -3.5527137e-15, 0, 1, 0, 3.5527137e-15, 0, 1, 0, 0, 0)
 
-[node name="SpotLight3D2" type="SpotLight3D" parent="." unique_id=152023423]
-transform = Transform3D(1, 0, 0, 0, 0.8480481, 0.52991927, 0, -0.52991927, 0.8480481, 0, 4.5, -1.195)
-light_color = Color(0.55078125, 0, 0.026089959, 1)
-light_energy = 10.269
-light_size = 0.262
-light_specular = 6.972
-shadow_enabled = true
-spot_range = 9.576
-spot_attenuation = 1.44
-spot_angle = 33.36
+[node name="CollisionShape3D" type="CollisionShape3D" parent="room/Radiator" unique_id=94879571]
+transform = Transform3D(34.355, 0, -1.2164492e-10, 0, 34.355, 0, 1.2164492e-10, 0, 34.355, 84.10781, 179.27368, -27.885223)
+shape = SubResource("BoxShape3D_kw0w7")
 
-[node name="Node3D" type="Node3D" parent="." unique_id=646247882]
+[node name="Lamp" parent="room" unique_id=1186988743 instance=ExtResource("16_chgw8")]
+transform = Transform3D(-8.52372e-09, 0, 0.195, 0, 0.195, 0, -0.195, 0, -8.52372e-09, 0, 4.6196337, -0.06862974)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="room/Lamp" unique_id=1811983444]
+transform = Transform3D(5.1282053, 2.842171e-14, 1.2423524e-21, 0, -2.2416097e-07, 5.1282053, 2.842171e-14, -5.1282053, -2.2416097e-07, 0, -0.63578415, 0)
+shadow_enabled = true
+spot_range = 5.336
+spot_angle = 36.53
+
+[node name="Lamp2" parent="room" unique_id=2133530510 instance=ExtResource("16_chgw8")]
+transform = Transform3D(-8.52372e-09, 0, 0.195, 0, 0.195, 0, -0.195, 0, -8.52372e-09, 0, 4.6196337, 4.318713)
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="room/Lamp2" unique_id=1169227067]
+transform = Transform3D(5.1282053, 4.2632564e-14, 1.6940659e-21, 0, -2.2416097e-07, 5.1282053, 4.2632564e-14, -5.1282053, -2.2416097e-07, -0.5525322, -0.94719315, -2.4151973e-08)
+shadow_enabled = true
+spot_range = 5.336
+spot_attenuation = -1.0
+spot_angle = 36.53
+
+[node name="Lamp3" parent="room" unique_id=1899407314 instance=ExtResource("16_chgw8")]
+transform = Transform3D(-8.52372e-09, 0, 0.195, 0, 0.195, 0, -0.195, 0, -8.52372e-09, 0, 4.6196337, -4.4967184)
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="room/Lamp3" unique_id=1015422297]
+transform = Transform3D(5.1282053, 4.2632564e-14, 1.6940659e-21, 0, -2.2416097e-07, 5.1282053, 4.2632564e-14, -5.1282053, -2.2416097e-07, -0.45339584, -0.94719315, -1.9818685e-08)
+visible = false
+shadow_enabled = true
+spot_range = 5.336
+spot_attenuation = -1.0
+spot_angle = 36.53
+
+[node name="light_standing" parent="." unique_id=1953703985 instance=ExtResource("17_2xpjq")]
+transform = Transform3D(1.9658313, 0, -0.89745593, 0, 2.1609995, 0, 0.89745593, 0, 1.9658313, -1.370764, 0.051371574, -3.9485562)
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="light_standing" unique_id=632824944]
+transform = Transform3D(0.068446755, -0.45746413, 0.0133437365, 0.42492306, 0.06853488, 0.16994086, -0.16997634, -0.012883499, 0.43020755, 0.012717962, 1.4132631, -0.025875807)
+shadow_enabled = true
+spot_range = 5.336
+spot_attenuation = -1.0
+spot_angle = 52.53
+
+[node name="Window" parent="." unique_id=1390747120 instance=ExtResource("17_wyfy2")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, -2.8526971, 1.4222896, 3.5011234)
+
+[node name="Window2" parent="." unique_id=1904367570 instance=ExtResource("17_wyfy2")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.8526971, 1.4222896, -1.5990928)
 
 [node name="room2" type="StaticBody3D" parent="." unique_id=725578690]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.58045, 0, 0)
+visible = false
 
 [node name="wall" type="StaticBody3D" parent="room2" unique_id=2094368566]
 transform = Transform3D(-2.4167358e-08, 1, 0, -0.55288476, -4.371139e-08, 0, 0, 0, 0.49368775, -3, 1.1147251, 0)
@@ -392,7 +438,6 @@ operation = 2
 
 [node name="Door" type="Node3D" parent="room2/wall4" unique_id=191250513]
 transform = Transform3D(-7.285231e-08, -2, 4.371139e-08, 0, -8.742278e-08, -1, 1.6666666, -8.742278e-08, 1.9106855e-15, 1.6501377, -0.050864697, 0.5851199)
-script = ExtResource("14_451bl")
 
 [node name="DoorPivot" type="Node3D" parent="room2/wall4/Door" unique_id=691085113]
 transform = Transform3D(1, -9.553426e-16, 0, 9.553426e-16, 1, 0, 0, 0, 1, -0.58563536, 0, 0.034082413)
@@ -404,7 +449,7 @@ transform = Transform3D(1, 1.642028e-15, 0, 9.553426e-16, 1, 0, 0, 0, 1, 0.58888
 transform = Transform3D(1.74, 2.9353512e-12, 8.881784e-16, 1.6622962e-15, 3.295, 9.1926466e-14, 0, 0, 0.29, 0.002250189, -0.07570553, 0)
 shape = SubResource("BoxShape3D_n3766")
 
-[node name="MeshInstance3D" parent="room2/wall4/Door/DoorPivot" unique_id=521315186 instance=ExtResource("14_n3766")]
+[node name="MeshInstance3D" parent="room2/wall4/Door/DoorPivot" unique_id=1885361054 instance=ExtResource("14_n3766")]
 transform = Transform3D(-2.3604152e-07, 4.6525717e-14, 5.4000006, 0, 5.4, 2.4528556e-14, -5.4000006, 0, -2.3604156e-07, 0.5888857, -1.3507675, 0)
 
 [node name="Door_animations" type="AnimationPlayer" parent="room2/wall4/Door/DoorPivot" unique_id=187290186]
@@ -446,3 +491,6 @@ skeleton = NodePath("../../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="room2/floor4" unique_id=1603685550]
 transform = Transform3D(7, 0, 0, 0, 0.1, 0, 0, 0, 15, 0, 0, 0)
 shape = SubResource("BoxShape3D_kb8nq")
+
+[node name="WorldEnvironment2" type="WorldEnvironment" parent="." unique_id=661693237]
+environment = SubResource("Environment_wyfy2")
