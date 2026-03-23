@@ -2,17 +2,17 @@
 
 [ext_resource type="PackedScene" uid="uid://dq5fv6kns776b" path="res://WORLD/player_full/player.tscn" id="1_63ygv"]
 [ext_resource type="Texture2D" uid="uid://cycjsg3cst5gx" path="res://WORLD/texture/wall/stonewall_19_basecolor-1K.png" id="2_em58i"]
-[ext_resource type="Texture2D" uid="uid://dighumhkxutca" path="res://WORLD/texture/floor/1K-tiling_39_basecolor.jpg" id="2_xcpqh"]
-[ext_resource type="Texture2D" uid="uid://yhajwc0umgc" path="res://WORLD/texture/floor/1K-tiling_39_ambientocclusion.jpg" id="3_k7dn7"]
 [ext_resource type="Texture2D" uid="uid://8edqpwsd101v" path="res://WORLD/texture/wall/stonewall_19_ambientocclusion-1K.png" id="3_qngob"]
 [ext_resource type="Texture2D" uid="uid://bqtl4axtijyx0" path="res://WORLD/texture/wall/stonewall_19_height-1K.png" id="4_min2a"]
-[ext_resource type="Texture2D" uid="uid://kbxtxqcst1bi" path="res://WORLD/texture/floor/1K-tiling_39_height.jpg" id="4_uuaot"]
-[ext_resource type="Texture2D" uid="uid://c7bff7yh2eiog" path="res://WORLD/texture/floor/1K-tiling_39_metallic.jpg" id="5_5icki"]
 [ext_resource type="Texture2D" uid="uid://co5a72cbe8gn2" path="res://WORLD/texture/wall/stonewall_19_normal-1K.png" id="5_n3766"]
-[ext_resource type="Texture2D" uid="uid://djfuoowp3qxi3" path="res://WORLD/texture/floor/1K-tiling_39_roughness.jpg" id="6_1qa5o"]
 [ext_resource type="Texture2D" uid="uid://cirp2ttk4t83v" path="res://WORLD/texture/wall/stonewall_19_roughness-1K.png" id="6_vcjaf"]
-[ext_resource type="Texture2D" uid="uid://qdclycidvvb6" path="res://WORLD/texture/floor/1K-tiling_39_normal.jpg" id="11_qngob"]
+[ext_resource type="Texture2D" uid="uid://ojiqbp3yhvgr" path="res://WORLD/texture/floor/Concrete033_4K_Color.jpg" id="9_2xpjq"]
+[ext_resource type="Texture2D" uid="uid://72isg040q7v5" path="res://WORLD/texture/floor/Concrete033_4K_AmbientOcclusion.jpg" id="10_wyfy2"]
+[ext_resource type="Texture2D" uid="uid://jvifkhbn07o4" path="res://WORLD/texture/floor/Concrete033_4K_Roughness.jpg" id="11_8hj7n"]
+[ext_resource type="Texture2D" uid="uid://bock6wos7u4u4" path="res://WORLD/texture/floor/Concrete033_4K_Displacement.jpg" id="11_eeay6"]
+[ext_resource type="Texture2D" uid="uid://6b300gb6smcv" path="res://WORLD/texture/floor/Concrete033_4K_NormalGL.jpg" id="11_wyfy2"]
 [ext_resource type="Script" uid="uid://pmje42drymbk" path="res://WORLD/game/door.gd" id="14_451bl"]
+[ext_resource type="Texture2D" uid="uid://53xptfwbsyp0" path="res://WORLD/texture/floor/Concrete033_4K_NormalDX.jpg" id="14_eeay6"]
 [ext_resource type="PackedScene" uid="uid://6mpgncx7l2ma" path="res://WORLD/game/door__metal__old_15_mb.glb" id="14_n3766"]
 [ext_resource type="PackedScene" uid="uid://dot57tcgadxil" path="res://WORLD/game/props/bunk_bed.glb" id="15_kw0w7"]
 [ext_resource type="PackedScene" uid="uid://bj2rbw0qegmnv" path="res://WORLD/game/props/trash.tscn" id="16_chgw8"]
@@ -63,24 +63,8 @@ uv1_scale = Vector3(0.91, 0.91, 0.91)
 uv1_triplanar = true
 uv1_world_triplanar = true
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_min2a"]
-albedo_color = Color(0.22440474, 0.2265625, 0.21536791, 1)
-albedo_texture = ExtResource("2_xcpqh")
-metallic = 1.0
-metallic_texture = ExtResource("5_5icki")
-roughness_texture = ExtResource("6_1qa5o")
-normal_enabled = true
-normal_texture = ExtResource("11_qngob")
-ao_enabled = true
-ao_texture = ExtResource("3_k7dn7")
-heightmap_enabled = true
-heightmap_texture = ExtResource("4_uuaot")
-uv1_triplanar = true
-uv1_world_triplanar = true
-
 [sub_resource type="BoxMesh" id="BoxMesh_xuyu6"]
 lightmap_size_hint = Vector2i(14, 21)
-material = SubResource("StandardMaterial3D_min2a")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2xpjq"]
 
@@ -160,21 +144,40 @@ _data = {
 height = 1.6987305
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_em58i"]
-albedo_texture = ExtResource("2_xcpqh")
-metallic = 1.0
-metallic_specular = 0.37
-metallic_texture = ExtResource("5_5icki")
-roughness_texture = ExtResource("6_1qa5o")
+albedo_texture = ExtResource("9_2xpjq")
+roughness_texture = ExtResource("11_8hj7n")
+normal_enabled = true
+normal_texture = ExtResource("11_wyfy2")
 ao_enabled = true
-ao_texture = ExtResource("3_k7dn7")
-heightmap_enabled = true
-heightmap_texture = ExtResource("4_uuaot")
-uv1_scale = Vector3(-0.56, -0.56, -0.525)
+ao_texture = ExtResource("10_wyfy2")
+heightmap_texture = ExtResource("11_eeay6")
+uv1_scale = Vector3(0.2, 0.2, 0.187)
 uv1_triplanar = true
 uv1_world_triplanar = true
 stencil_flags = 2
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8hj7n"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8domm"]
+load_path = "res://.godot/imported/Concrete033_4K_Color.jpg-454a0521aa25f4f78b9d2ebce7d54e28.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7aphd"]
+load_path = "res://.godot/imported/Concrete033_4K_AmbientOcclusion.jpg-1ea78a01481bfbc0e1891cf19eb4b366.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gb4g3"]
+load_path = "res://.godot/imported/Concrete033_4K_Roughness.jpg-19851b2c9b302959d767cc4596b23c93.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iqt1f"]
+albedo_texture = SubResource("CompressedTexture2D_8domm")
+roughness_texture = SubResource("CompressedTexture2D_gb4g3")
+normal_enabled = true
+normal_texture = ExtResource("14_eeay6")
+ao_enabled = true
+ao_texture = SubResource("CompressedTexture2D_7aphd")
+uv1_scale = Vector3(0.215, 0.215, 0.201)
+uv1_triplanar = true
+uv1_world_triplanar = true
+stencil_flags = 2
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_n3766"]
 lightmap_size_hint = Vector2i(17, 19)
@@ -330,7 +333,7 @@ shape = SubResource("CylinderShape3D_31bmp")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.8, 0, 0, 1.5492303)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="room/floor2" unique_id=2952874]
-transform = Transform3D(7, 0, 0, 0, 0.1, 0, 0, 0, 15, 0.0030496716, 0, 0.00033402443)
+transform = Transform3D(7, 0, 0, 0, 0.1, 0, 0, 0, 15, -0.39879662, 0.12066156, -0.17364252)
 material_override = SubResource("StandardMaterial3D_em58i")
 mesh = SubResource("BoxMesh_xuyu6")
 skeleton = NodePath("../../..")
@@ -344,6 +347,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.7569127, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="room/floor3" unique_id=199197774]
 transform = Transform3D(6.35, 0, 0, 0, 0.1, 0, 0, 0, 11.865, 0.1482507, 0, 1.4366343)
+material_override = SubResource("StandardMaterial3D_iqt1f")
 mesh = SubResource("BoxMesh_xuyu6")
 skeleton = NodePath("../../..")
 
@@ -414,6 +418,7 @@ transform = Transform3D(2.0121818, 0, 0.106545694, 0, 2.015, 0, -0.106545694, 0,
 
 [node name="OmniLight3D" type="OmniLight3D" parent="room/Redlamp" unique_id=859935601]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8235209, 2.535724, -6.3358088)
+visible = false
 light_color = Color(1, 0, 0, 1)
 light_energy = 1.5
 shadow_enabled = true

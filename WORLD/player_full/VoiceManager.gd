@@ -14,7 +14,6 @@ func _ready():
 
 func _setup_microphone():
 	mic_bus_index = AudioServer.get_bus_index("MicBus")
-	
 	mic_player = AudioStreamPlayer.new()
 	mic_player.stream = AudioStreamMicrophone.new()
 	mic_player.bus = "MicBus"

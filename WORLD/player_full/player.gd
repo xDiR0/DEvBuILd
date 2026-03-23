@@ -6,15 +6,28 @@ var can_move = false
 @export var jump_height : float = 0.8 
 @export var mouse_sensitivity : float = 0.002
 
+# ========== ДОБАВИТЬ: HP СИСТЕМА ==========
+@export var max_health: int = 100
+var current_health: int
+var is_invulnerable: bool = false
+@export var invulnerable_time: float = 1.0
+
+# Сигналы для UI
+signal health_changed(new_health: int)
+signal player_died
+# ========================================
+
 @onready var camera_3d: Camera3D = $Camera3D
 @onready var camera_animations: AnimationPlayer = $Camera_animations
 
 var camera_rotation_x = 0.0
-
 func _ready():
+	# ========== ДОБАВИТЬ: Инициализация HP ==========
+	current_health = max_health
+	# ================================================
+	
 	# Подключаем сигнал окончания анимации
 	camera_animations.animation_finished.connect(_on_animation_finished)
-	
 	# Запускаем анимацию пробуждения
 	camera_animations.play("wake_up")
 	
@@ -34,6 +47,11 @@ func _input(event):
 		
 		# ГОРИЗОНТАЛЬ (влево/вправо) - вращаем персонажа
 		rotation.y -= event.relative.x * mouse_sensitivity
+	
+	# ========== ДОБАВИТЬ: Тестовый урон по клавише H ==========
+	if event.is_action_pressed("ui_accept") and Input.is_key_pressed(KEY_H) and can_move:
+		take_damage(10)
+	# ========================================================
 
 func _physics_process(delta):
 	if not can_move:
@@ -66,3 +84,44 @@ func _physics_process(delta):
 		camera_animations.play("idle")
 	
 	move_and_slide()
+
+# ========== ДОБАВИТЬ: МЕТОДЫ HP ==========
+func take_damage(damage: int):
+	if not can_move or is_invulnerable or current_health <= 0:
+		return
+	
+	print("Получен урон: ", damage, " | Осталось HP: ", current_health - damage)
+	
+	current_health -= damage
+	current_health = max(0, current_health)
+	
+	health_changed.emit(current_health)
+
+	# Неуязвимость
+	is_invulnerable = true
+	await get_tree().create_timer(invulnerable_time).timeout
+	is_invulnerable = false
+	
+	if current_health <= 0:
+		die()
+
+func heal(amount: int):
+	if current_health <= 0:
+		return
+	
+	current_health += amount
+	current_health = min(max_health, current_health)
+	
+	print("Восстановлено: ", amount, " HP | Текущее HP: ", current_health)
+	health_changed.emit(current_health)
+
+func die():
+	print("Игрок погиб!")
+	can_move = false
+	player_died.emit()
+	
+	# Простая перезагрузка сцены через 2 секунды
+	await get_tree().create_timer(2.0).timeout
+	get_tree().reload_current_scene()
+
+# ========================================

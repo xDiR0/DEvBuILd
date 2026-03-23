@@ -1,0 +1,96 @@
+[gd_scene format=3 uid="uid://dwucrsjapwm6c"]
+
+[ext_resource type="Script" uid="uid://bdyi2p5bsknm1" path="res://WORLD/player_full/ui_player/UI_Manager.gd" id="1_psgmd"]
+[ext_resource type="Script" uid="uid://dimj6vkg6thly" path="res://WORLD/player_full/ui_player/MicrophoneIndicator.gd" id="1_vfqqf"]
+[ext_resource type="Script" uid="uid://fvdh6w2e4dsv" path="res://WORLD/player_full/ui_player/HPIndicator.gd" id="2_smysj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_psgmd"]
+bg_color = Color(0.17283267, 0.17283267, 0.17283258, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vbkwy"]
+bg_color = Color(4.271604e-06, 0.5084169, 1.92523e-07, 1)
+
+[node name="UI" type="Control" unique_id=1204227680]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 509.0
+offset_top = 283.0
+offset_right = 509.0
+offset_bottom = 283.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_psgmd")
+
+[node name="MicrophoneIndicator" type="Control" parent="." unique_id=1034011163]
+anchors_preset = 0
+offset_left = -1018.0
+offset_top = -8.0
+offset_right = -956.0
+offset_bottom = 18.0
+script = ExtResource("1_vfqqf")
+
+[node name="Label" type="Label" parent="MicrophoneIndicator" unique_id=1040281123]
+layout_mode = 0
+offset_left = -37.0
+offset_top = -25.0
+offset_right = 71.0
+offset_bottom = -2.0
+text = "Тихо/громко"
+
+[node name="ProgressBar" type="ProgressBar" parent="MicrophoneIndicator" unique_id=1978837885]
+layout_mode = 0
+offset_left = -39.0
+offset_top = -2.0
+offset_right = 69.0
+offset_bottom = 28.0
+
+[node name="HPIndicator" type="Control" parent="." unique_id=1353707570]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 92.99997
+offset_top = 25.999971
+offset_right = 132.99997
+offset_bottom = 65.999954
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_smysj")
+
+[node name="HPBar" type="ProgressBar" parent="HPIndicator" unique_id=1288548787]
+layout_mode = 1
+offset_left = -1030.0
+offset_top = -36.0
+offset_right = -730.0
+offset_bottom = -6.0
+theme_override_styles/background = SubResource("StyleBoxFlat_psgmd")
+theme_override_styles/fill = SubResource("StyleBoxFlat_vbkwy")
+value = 100.0
+fill_mode = 1
+show_percentage = false
+
+[node name="HPLabel" type="Label" parent="HPIndicator" unique_id=1681550850]
+layout_mode = 1
+offset_left = -1030.0
+offset_top = -36.0
+offset_right = -730.0
+offset_bottom = -6.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 18
+text = "HP 100/100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HPBackground" type="Panel" parent="HPIndicator" unique_id=1348940963]
+visible = false
+layout_mode = 1
+offset_left = -1031.0
+offset_top = -49.0
+offset_right = -832.0
+offset_bottom = 9.0

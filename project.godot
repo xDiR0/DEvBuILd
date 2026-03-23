@@ -27,7 +27,7 @@ driver/enable_input=true
 [autoload]
 
 VoiceManager="*uid://o23brhqiux6y"
-SettingsManager="*uid://cu7cngr7wfhbn"
+SettingsManager="uid://cu7cngr7wfhbn"
 
 [display]
 
