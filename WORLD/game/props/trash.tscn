@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://bj2rbw0qegmnv"]
+
+[ext_resource type="PackedScene" uid="uid://b8fg42ca3lwq7" path="res://WORLD/game/props/trash_can.glb" id="1_666gq"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_wl16j"]
+height = 3.451938
+radius = 1.3516414
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_4i138"]
+height = 2.137825
+radius = 1.1649394
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_rbeor"]
+height = 3.451938
+radius = 1.3516414
+
+[node name="Sketchfab_Scene" unique_id=1468145737 instance=ExtResource("1_666gq")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_model/Collada visual scene group/POTE_004/LATA-material" parent_id_path=PackedInt32Array(1696481741) index="0" unique_id=1626801379]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.002816558, 0.0014804602, 1.586949)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/Collada visual scene group/POTE_004/LATA-material/StaticBody3D" index="0" unique_id=416913886]
+shape = SubResource("CylinderShape3D_wl16j")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_model/Collada visual scene group/BOLSA/DEMAS-material" parent_id_path=PackedInt32Array(771640714) index="0" unique_id=1605925918]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.021645546, -0.021721482, -0.15308344)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/Collada visual scene group/BOLSA/DEMAS-material/StaticBody3D" index="0" unique_id=292524907]
+shape = SubResource("CylinderShape3D_4i138")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_model/Collada visual scene group/POTE_001/LATA-material3" parent_id_path=PackedInt32Array(2036567210) index="0" unique_id=1888411374]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.002816558, 0.0014804602, 1.586949)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/Collada visual scene group/POTE_001/LATA-material3/StaticBody3D" index="0" unique_id=1989759018]
+shape = SubResource("CylinderShape3D_rbeor")
