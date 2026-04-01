@@ -34,10 +34,6 @@ SettingsManager="uid://cu7cngr7wfhbn"
 window/size/borderless=true
 window/stretch/mode="canvas_items"
 
-[editor_plugins]
-
-enabled=PackedStringArray()
-
 [file_customization]
 
 folder_colors={

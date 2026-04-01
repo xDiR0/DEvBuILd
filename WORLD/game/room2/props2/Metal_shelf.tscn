@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://2d7mwgats57q"]
+
+[ext_resource type="PackedScene" uid="uid://bnyvjnb0iehkk" path="res://WORLD/game/room2/props2/old_metal_shelf_low_poly_game_ready.glb" id="1_7y32h"]
+
+[node name="Sketchfab_Scene" unique_id=1426427343 instance=ExtResource("1_7y32h")]
+transform = Transform3D(0.025, 0, 0, 0, 0.025, 0, 0, 0, 0.025, 0, 0, 0)

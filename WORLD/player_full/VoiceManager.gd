@@ -44,6 +44,6 @@ func _check_volume():
 		silence_timer = 0.0
 
 func _send_random_command():
-	var cmd = "open" if randi() % 2 == 0 else "close"
+	var cmd = "open"
 	print("Команда: ", cmd)
 	emit_signal("voice_command_detected", cmd)

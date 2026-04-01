@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://dwucrsjapwm6c"]
 
-[ext_resource type="Script" uid="uid://bdyi2p5bsknm1" path="res://WORLD/player_full/ui_player/UI_Manager.gd" id="1_psgmd"]
 [ext_resource type="Script" uid="uid://dimj6vkg6thly" path="res://WORLD/player_full/ui_player/MicrophoneIndicator.gd" id="1_vfqqf"]
 [ext_resource type="Script" uid="uid://fvdh6w2e4dsv" path="res://WORLD/player_full/ui_player/HPIndicator.gd" id="2_smysj"]
 
@@ -23,7 +22,6 @@ offset_right = 509.0
 offset_bottom = 283.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_psgmd")
 
 [node name="MicrophoneIndicator" type="Control" parent="." unique_id=1034011163]
 anchors_preset = 0
@@ -86,11 +84,3 @@ theme_override_font_sizes/font_size = 18
 text = "HP 100/100"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="HPBackground" type="Panel" parent="HPIndicator" unique_id=1348940963]
-visible = false
-layout_mode = 1
-offset_left = -1031.0
-offset_top = -49.0
-offset_right = -832.0
-offset_bottom = 9.0
