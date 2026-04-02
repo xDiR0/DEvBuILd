@@ -5,10 +5,181 @@
 [ext_resource type="Texture2D" uid="uid://e4sjejacq4cg" path="res://WORLD/texture/floor_2/metal_plate_metal_2k.exr" id="3_75p14"]
 [ext_resource type="Texture2D" uid="uid://c05n7x838xv8a" path="res://WORLD/texture/floor_2/metal_plate_disp_2k.png" id="4_75p14"]
 [ext_resource type="Texture2D" uid="uid://dvu22mbdkldvu" path="res://WORLD/texture/floor_2/metal_plate_rough_2k.exr" id="4_s2t11"]
+[ext_resource type="Texture2D" uid="uid://exygn4sgtrg8" path="res://WORLD/texture/floor/floor1/concrete_slab_wall_02_diff_2k.jpg" id="6_7itcf"]
+[ext_resource type="Texture2D" uid="uid://bp320wmvyk7e8" path="res://WORLD/texture/floor_2/floor3/dirty_tiles_diff_2k.jpg" id="6_buwej"]
 [ext_resource type="Material" uid="uid://dvl8wb6unr1g0" path="res://WORLD/texture/new_shader_material.tres" id="6_s2t11"]
+[ext_resource type="Texture2D" uid="uid://pvt8utuim6mg" path="res://WORLD/texture/floor_2/floor3/dirty_tiles_ao_2k.jpg" id="7_1eaej"]
+[ext_resource type="Texture2D" uid="uid://b2tu1qkr8kv17" path="res://WORLD/texture/floor/floor1/concrete_slab_wall_02_disp_2k.png" id="7_k2mhi"]
 [ext_resource type="PackedScene" uid="uid://g6j0o3eps387" path="res://WORLD/game/room2/props2/old_air_conditioner.glb" id="7_xg51m"]
+[ext_resource type="Texture2D" uid="uid://dgwrpypwn018g" path="res://WORLD/texture/floor/floor1/concrete_slab_wall_02_nor_gl_2k.png" id="8_26187"]
+[ext_resource type="Texture2D" uid="uid://dg6urwllcc3gw" path="res://WORLD/texture/floor_2/floor3/dirty_tiles_disp_2k.png" id="8_qd7wi"]
+[ext_resource type="Texture2D" uid="uid://c3olkx1kimali" path="res://WORLD/texture/floor/floor1/concrete_slab_wall_02_rough_2k.png" id="9_kb84u"]
 [ext_resource type="PackedScene" uid="uid://bp036hlly4g5l" path="res://WORLD/game/room2/props2/old_barrel.glb" id="9_o0kt0"]
 [ext_resource type="PackedScene" uid="uid://2d7mwgats57q" path="res://WORLD/game/room2/props2/Metal_shelf.tscn" id="9_xg51m"]
+[ext_resource type="PackedScene" uid="uid://cfhmg3kuirypv" path="res://WORLD/game/room2/props2/old_chest.glb" id="17_26187"]
+[ext_resource type="PackedScene" uid="uid://f3d6ajwpf7vy" path="res://WORLD/game/room2/props2/dusty_old_bookshelf_free.glb" id="17_k2mhi"]
+[ext_resource type="PackedScene" uid="uid://dmsam8l5ax12i" path="res://WORLD/game/room2/props2/street_light_lamp_spotlight_-_10mb.glb" id="19_kb84u"]
+[ext_resource type="PackedScene" uid="uid://cqpevv232yhqj" path="res://WORLD/game/room2/props2/broken_ceiling_lamp.glb" id="20_su46k"]
+[ext_resource type="Texture2D" uid="uid://dvbtbqw2nqcic" path="res://WORLD/game/room1/satara_night_no_lamps_4k.exr" id="20_uy4is"]
+[ext_resource type="PackedScene" uid="uid://0delpc5domlt" path="res://WORLD/game/room2/props2/blue_metal_door.glb" id="21_su46k"]
+
+[sub_resource type="Animation" id="Animation_su46k"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Room2/Barrel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.6514657, -0.22333753, -10.532805)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Room2/Barrel:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Room2/Metall_shelf:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.6709325, -2.310878, -14.979302)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Room2/Metall_shelf:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Room2/Big_oven:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-2.8342593, -0.054076076, -21.512424)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Room2/Big_oven:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.5371051, 2.6031277, 2.1657763)]
+}
+
+[sub_resource type="Animation" id="Animation_wg5u2"]
+resource_name = "float"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Room2/Barrel:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.5, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0.061086524, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Room2/Barrel:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.5, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.6514657, -0.22333753, -10.532805), Vector3(-0.651, -0.3, -10.533), Vector3(-0.6514657, -0.22333753, -10.532805)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Room2/Metall_shelf:position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2.5, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(1.6709325, -2.310878, -14.979302), Vector3(1.6709325, -2.2744012, -14.979302), Vector3(1.6709325, -2.310878, -14.979302)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Room2/Metall_shelf:rotation")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2.5, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0.03303908, 0), Vector3(0, 0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Room2/Big_oven:position")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 2.5, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-2.8342593, -0.054076076, -21.512424), Vector3(-2.8342593, -0.14008176, -21.512424), Vector3(-2.8342593, -0.054076076, -21.512424)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Room2/Big_oven:rotation")
+tracks/5/interp = 2
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 2.5, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(1.5371051, 2.6031277, 2.1657763), Vector3(1.5376351, 2.645919, 2.1659536), Vector3(1.5371051, 2.6031277, 2.1657763)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qrmfv"]
+_data = {
+&"RESET": SubResource("Animation_su46k"),
+&"float": SubResource("Animation_wg5u2")
+}
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h4snk"]
 albedo_texture = ExtResource("2_o0v0j")
@@ -27,24 +198,133 @@ material = SubResource("StandardMaterial3D_h4snk")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8mg24"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uy4is"]
+albedo_texture = ExtResource("6_7itcf")
+roughness_texture = ExtResource("9_kb84u")
+normal_enabled = true
+normal_texture = ExtResource("8_26187")
+ao_enabled = true
+ao_texture = ExtResource("7_k2mhi")
+uv1_scale = Vector3(0.7, 0.7, 0.7)
+uv1_triplanar = true
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_su46k"]
+load_path = "res://.godot/imported/concrete_slab_wall_02_diff_2k.jpg-070eef8a3972811de8720f671074bbf2.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wg5u2"]
+load_path = "res://.godot/imported/concrete_slab_wall_02_disp_2k.png-5e71f1123b279ba4ffec551ced804f4a.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qrmfv"]
+load_path = "res://.godot/imported/concrete_slab_wall_02_nor_gl_2k.png-bda6a7c4969bf4a2b11c73baa6243f3b.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2j60g"]
+load_path = "res://.godot/imported/concrete_slab_wall_02_rough_2k.png-321f1e8c3b31a16c1279d0ca590ed817.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dms4i"]
+albedo_texture = SubResource("CompressedTexture2D_su46k")
+roughness_texture = SubResource("CompressedTexture2D_2j60g")
+normal_enabled = true
+normal_texture = SubResource("CompressedTexture2D_qrmfv")
+ao_enabled = true
+ao_texture = SubResource("CompressedTexture2D_wg5u2")
+uv1_scale = Vector3(4.675, 4.675, 4.675)
+
 [sub_resource type="BoxMesh" id="BoxMesh_8mg24"]
+material = SubResource("StandardMaterial3D_dms4i")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rbjey"]
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_nfbtq"]
+load_path = "res://.godot/imported/concrete_slab_wall_02_diff_2k.jpg-070eef8a3972811de8720f671074bbf2.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tot6r"]
+load_path = "res://.godot/imported/concrete_slab_wall_02_disp_2k.png-5e71f1123b279ba4ffec551ced804f4a.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tf44f"]
+load_path = "res://.godot/imported/concrete_slab_wall_02_nor_gl_2k.png-bda6a7c4969bf4a2b11c73baa6243f3b.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xpksk"]
+load_path = "res://.godot/imported/concrete_slab_wall_02_rough_2k.png-321f1e8c3b31a16c1279d0ca590ed817.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ftkkj"]
+albedo_texture = SubResource("CompressedTexture2D_nfbtq")
+roughness_texture = SubResource("CompressedTexture2D_xpksk")
+normal_enabled = true
+normal_texture = SubResource("CompressedTexture2D_tf44f")
+ao_enabled = true
+ao_texture = SubResource("CompressedTexture2D_tot6r")
+uv1_scale = Vector3(4.675, 4.675, 4.675)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_6mqgq"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_afim3"]
+albedo_texture = ExtResource("6_buwej")
+normal_enabled = true
+normal_texture = ExtResource("8_qd7wi")
+ao_enabled = true
+ao_texture = ExtResource("7_1eaej")
+uv1_scale = Vector3(4, 4, 4)
+uv1_triplanar = true
+
 [sub_resource type="BoxMesh" id="BoxMesh_rbjey"]
+material = SubResource("StandardMaterial3D_afim3")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_o0v0j"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_75p14"]
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5ede5"]
+load_path = "res://.godot/imported/concrete_slab_wall_02_diff_2k.jpg-070eef8a3972811de8720f671074bbf2.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7fgj1"]
+load_path = "res://.godot/imported/concrete_slab_wall_02_disp_2k.png-5e71f1123b279ba4ffec551ced804f4a.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3ylpa"]
+load_path = "res://.godot/imported/concrete_slab_wall_02_nor_gl_2k.png-bda6a7c4969bf4a2b11c73baa6243f3b.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4qeu4"]
+load_path = "res://.godot/imported/concrete_slab_wall_02_rough_2k.png-321f1e8c3b31a16c1279d0ca590ed817.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gipsr"]
+albedo_texture = SubResource("CompressedTexture2D_5ede5")
+roughness_texture = SubResource("CompressedTexture2D_4qeu4")
+normal_enabled = true
+normal_texture = SubResource("CompressedTexture2D_3ylpa")
+ao_enabled = true
+ao_texture = SubResource("CompressedTexture2D_7fgj1")
+uv1_scale = Vector3(15.025, 15.025, 15.025)
+
+[sub_resource type="BoxMesh" id="BoxMesh_afim3"]
+material = SubResource("StandardMaterial3D_gipsr")
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_s2t11"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_h4snk"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_lpxof"]
+load_path = "res://.godot/imported/concrete_slab_wall_02_diff_2k.jpg-070eef8a3972811de8720f671074bbf2.s3tc.ctex"
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_olaaw"]
-material = ExtResource("6_s2t11")
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ar6sb"]
+load_path = "res://.godot/imported/concrete_slab_wall_02_disp_2k.png-5e71f1123b279ba4ffec551ced804f4a.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_kdxf1"]
+load_path = "res://.godot/imported/concrete_slab_wall_02_nor_gl_2k.png-bda6a7c4969bf4a2b11c73baa6243f3b.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bptt4"]
+load_path = "res://.godot/imported/concrete_slab_wall_02_rough_2k.png-321f1e8c3b31a16c1279d0ca590ed817.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dbrw0"]
+albedo_texture = SubResource("CompressedTexture2D_lpxof")
+roughness_texture = SubResource("CompressedTexture2D_bptt4")
+emission_enabled = true
+normal_enabled = true
+normal_texture = SubResource("CompressedTexture2D_kdxf1")
+ao_enabled = true
+ao_texture = SubResource("CompressedTexture2D_ar6sb")
+uv1_scale = Vector3(15.025, 15.025, 15.025)
+
+[sub_resource type="BoxMesh" id="BoxMesh_7itcf"]
+material = SubResource("StandardMaterial3D_dbrw0")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_h4snk"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_o0kt0"]
 
@@ -52,12 +332,72 @@ material = ExtResource("6_s2t11")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xg51m"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_kb84u"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_26187"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_olaaw"]
+material = ExtResource("6_s2t11")
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_kb84u"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_26187"]
+load_path = "res://.godot/imported/dirty_tiles_diff_2k.jpg-00a0abce31ff6542d948d79bde308bbd.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_kb84u"]
+load_path = "res://.godot/imported/dirty_tiles_ao_2k.jpg-ed940adf5250e897c4d2f1f11632a62a.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_uy4is"]
+load_path = "res://.godot/imported/dirty_tiles_disp_2k.png-9eb07df34f66976e95a9fbadabe3041b.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_su46k"]
+albedo_texture = SubResource("CompressedTexture2D_26187")
+normal_enabled = true
+normal_texture = SubResource("CompressedTexture2D_uy4is")
+ao_enabled = true
+ao_texture = SubResource("CompressedTexture2D_kb84u")
+uv1_scale = Vector3(1.365, 1.365, 1.365)
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_wg5u2"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qrmfv"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_wg5u2"]
+panorama = ExtResource("20_uy4is")
+
+[sub_resource type="Sky" id="Sky_qrmfv"]
+sky_material = SubResource("PanoramaSkyMaterial_wg5u2")
+
+[sub_resource type="Environment" id="Environment_2j60g"]
+background_mode = 2
+sky = SubResource("Sky_qrmfv")
+ambient_light_source = 3
+reflected_light_source = 2
+tonemap_mode = 3
+ssr_enabled = true
+sdfgi_enabled = true
+sdfgi_use_occlusion = true
+sdfgi_cascades = 8
+volumetric_fog_enabled = true
+volumetric_fog_albedo = Color(0.8067547, 0.56001747, 0.3583569, 1)
+volumetric_fog_emission = Color(0.19800925, 0.103438504, 0.020667668, 1)
+volumetric_fog_ambient_inject = 0.1
+adjustment_enabled = true
+
 [node name="Room2" type="Node3D" unique_id=891588213]
 
 [node name="PLAYER" parent="." unique_id=1030635555 instance=ExtResource("1_olaaw")]
 transform = Transform3D(1, -8.4568615e-05, -1.1333902e-05, 8.4568615e-05, 1, -0.00019127101, 1.1333902e-05, 0.00019127101, 1, 0, 0.27309895, 0)
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1160370355]
+libraries/ = SubResource("AnimationLibrary_qrmfv")
+autoplay = &"float"
+
 [node name="Room2" type="Node3D" parent="." unique_id=1013301835]
+
+[node name="door" parent="Room2" unique_id=782524595 instance=ExtResource("21_su46k")]
+transform = Transform3D(1, 0, -2.9802322e-08, 3.7252903e-09, 1, -1.8626451e-09, -2.9802322e-08, 3.7252903e-09, 0.99999994, 0.033177435, -0.39114237, -8.479864)
 
 [node name="floor" type="StaticBody3D" parent="Room2" unique_id=1860047826]
 
@@ -71,7 +411,6 @@ shape = SubResource("BoxShape3D_olaaw")
 
 [node name="floor2" type="StaticBody3D" parent="Room2" unique_id=23145278]
 transform = Transform3D(-1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0, 0, 1, 0, 3.6, 0)
-visible = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Room2/floor2" unique_id=1240935174]
 transform = Transform3D(4, 0, 0, 0, 0.1, 0, 0, 0, 10, 0, 0, -3.3227184)
@@ -82,22 +421,42 @@ transform = Transform3D(4, 0, 0, 0, 0.1, 0, 0, 0, 10, 0, 0, -3.3227184)
 shape = SubResource("BoxShape3D_8mg24")
 
 [node name="wall_open" type="CSGCombiner3D" parent="Room2" unique_id=246990293]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8.443344)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, -8.443344)
+material_override = SubResource("StandardMaterial3D_uy4is")
 use_collision = true
 
 [node name="wall" type="CSGBox3D" parent="Room2/wall_open" unique_id=1739725233]
-transform = Transform3D(9, 0, 0, 0, 5.999799, 0.001640591, 0, -0.04921773, 0.1999933, 0, 2.2314918, 0.0043735504)
-size = Vector3(1, 1.1777344, 1)
+transform = Transform3D(9, 0, 0, 0, 5.999799, 0.001640591, 0, -0.04921773, 0.1999933, 0, 0.93807817, 0.014984131)
+size = Vector3(1, 1.6088867, 1)
 
 [node name="cutter" type="CSGBox3D" parent="Room2/wall_open" unique_id=543143908]
-transform = Transform3D(2, 0, 0, 0, 3.435, 0, 0, 0, 0.645, 0, 1.6257387, 0)
+transform = Transform3D(2, 0, 0, 0, 3.435, 0, 0, 0, 0.645, -0.041259766, 1.5643109, 0)
 operation = 2
-size = Vector3(1, 0.9468789, 1)
+size = Vector3(0.7609863, 0.88032407, 1)
 
 [node name="Door" type="Node3D" parent="Room2/wall_open" unique_id=127946364]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0048281, 1.6775609, 0)
 
 [node name="DoorPivot" type="Node3D" parent="Room2/wall_open/Door" unique_id=2069004131]
+
+[node name="wall_open2" type="CSGCombiner3D" parent="Room2" unique_id=825566828]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, -28.459791)
+material_override = SubResource("StandardMaterial3D_uy4is")
+use_collision = true
+
+[node name="wall" type="CSGBox3D" parent="Room2/wall_open2" unique_id=1139748525]
+transform = Transform3D(9, 0, 0, 0, 5.999799, 0.001640591, 0, -0.04921773, 0.1999933, 0, 0.93807817, 0.014984131)
+size = Vector3(1, 1.6088867, 1)
+
+[node name="cutter" type="CSGBox3D" parent="Room2/wall_open2" unique_id=262877439]
+transform = Transform3D(2, 0, 0, 0, 3.435, 0, 0, 0, 0.645, 0, 1.6257387, 0)
+operation = 2
+size = Vector3(1, 0.9468789, 1)
+
+[node name="Door" type="Node3D" parent="Room2/wall_open2" unique_id=914455282]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0048281, 1.6775609, 0)
+
+[node name="DoorPivot" type="Node3D" parent="Room2/wall_open2/Door" unique_id=350102036]
 
 [node name="wall" type="StaticBody3D" parent="Room2" unique_id=278842946]
 transform = Transform3D(1, 0, 0, 0, 3.515, 0, 0, 0, 10.665, -1.9717042, 1.8882179, -3.0993638)
@@ -114,7 +473,8 @@ shape = SubResource("BoxShape3D_rbjey")
 transform = Transform3D(-1, 0, -9.323639e-07, 0, 3.515, 0, 8.742278e-08, 0, -10.665, 1.8797398, 1.8882179, -3.3705812)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Room2/wall2" unique_id=126611340]
-transform = Transform3D(0.12999997, 0, 0, 0, 1.0249997, 0, 0, 0, 0.98999995, 0, -0.026630223, -0.011871308)
+transform = Transform3D(0.12999995, 0, 0, 0, 1.0249997, 0, 0, 0, 0.98999995, 0, -0.026630223, -0.017233163)
+material_override = SubResource("StandardMaterial3D_ftkkj")
 mesh = SubResource("BoxMesh_8mg24")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Room2/wall2" unique_id=740740994]
@@ -134,7 +494,6 @@ transform = Transform3D(9, 0, 0, 0, 0.1, 0, 0, 0, 20, 0, -1.1744815, -18.536905)
 shape = SubResource("BoxShape3D_o0v0j")
 
 [node name="floor3" type="StaticBody3D" parent="Room2" unique_id=1511365512]
-visible = false
 
 [node name="floor4" type="MeshInstance3D" parent="Room2/floor3" unique_id=2141468721]
 transform = Transform3D(9, 0, 0, 0, 0.1, 0, 0, 0, 20, 0, 5.6896467, -18.536905)
@@ -150,7 +509,7 @@ transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 0, -2.8609161, 0)
 
 [node name="wall3" type="MeshInstance3D" parent="Room2/wall5" unique_id=81020306]
 transform = Transform3D(0.1, 0, 0, 0, 7, 0, 0, 0, 20, 4.4291987, 2.2313814, -18.536905)
-mesh = SubResource("BoxMesh_rbjey")
+mesh = SubResource("BoxMesh_afim3")
 skeleton = NodePath("../..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Room2/wall5" unique_id=850502372]
@@ -162,17 +521,12 @@ transform = Transform3D(1, 0, 0, 0, 1.4, 0, 0, 0, 1, 0, -2.1633503, 0)
 
 [node name="wall4" type="MeshInstance3D" parent="Room2/wall3" unique_id=1633538262]
 transform = Transform3D(0.1, 0, 0, 0, 7, 0, 0, 0, 20, -4.430468, 2.1802936, -18.536905)
-mesh = SubResource("BoxMesh_rbjey")
+mesh = SubResource("BoxMesh_7itcf")
 skeleton = NodePath("../..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Room2/wall3" unique_id=982529897]
 transform = Transform3D(0.1, 0, 0, 0, 7, 0, 0, 0, 20, -4.430468, 2.1802936, -18.536905)
 shape = SubResource("BoxShape3D_h4snk")
-
-[node name="water" type="MeshInstance3D" parent="Room2" unique_id=160730155]
-transform = Transform3D(4.7, 0, 0, 0, 1, 0, 0, 0, 10.74, 0, -0.2409544, -17.885098)
-mesh = SubResource("PlaneMesh_olaaw")
-skeleton = NodePath("../..")
 
 [node name="Conditioner" type="StaticBody3D" parent="Room2" unique_id=1720663983]
 
@@ -184,22 +538,109 @@ transform = Transform3D(1, 0, 0, 0, 1.335, 0, 0, 0, 1, -3.893527, 4.9398003, -19
 shape = SubResource("BoxShape3D_o0kt0")
 
 [node name="Barrel" type="StaticBody3D" parent="Room2" unique_id=652104690]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5047798, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6514657, -0.22333753, -10.532805)
 
 [node name="Mesh" parent="Room2/Barrel" unique_id=737598712 instance=ExtResource("9_o0kt0")]
-transform = Transform3D(0.21213204, -0.21213204, -9.272586e-09, 0, -1.3113417e-08, 0.3, -0.21213204, -0.21213204, -9.272586e-09, -0.6514657, -0.22333753, -10.532805)
+transform = Transform3D(0.21213204, -0.21213204, -9.272586e-09, 0, -1.3113417e-08, 0.3, -0.21213204, -0.21213204, -9.272586e-09, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Room2/Barrel" unique_id=1584955587]
-transform = Transform3D(0.7707464, -0.5020458, -3.090862e-08, 0, -3.1035086e-08, 1, -0.7707464, -0.5020458, -3.090862e-08, -0.653345, -0.19720642, -10.52586)
+transform = Transform3D(0.7707464, -0.5020458, -3.090862e-08, 0, -3.1035086e-08, 1, -0.7707464, -0.5020458, -3.090862e-08, 0, 0, 0)
 shape = SubResource("CylinderShape3D_h4snk")
 
 [node name="Metall_shelf" type="StaticBody3D" parent="Room2" unique_id=1994340051]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6709325, -2.310878, -14.979302)
 
 [node name="Mesh" parent="Room2/Metall_shelf" unique_id=1426427343 instance=ExtResource("9_xg51m")]
-transform = Transform3D(0.01419305, -0.0027901644, 0.020390488, 0.0022073016, 0.024832679, 0.0018616018, -0.020461801, 0.0007434463, 0.014344412, 1.6709325, -2.310878, -14.979302)
+transform = Transform3D(0.01419305, -0.0027901644, 0.020390488, 0.0022073016, 0.024832679, 0.0018616018, -0.020461801, 0.0007434463, 0.014344412, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Room2/Metall_shelf" unique_id=320492634]
-transform = Transform3D(2.8499637, -0.5100423, 1.4477253, 0.44322604, 4.539415, 0.13217369, -4.1087294, 0.1359021, 1.0184529, 1.6709325, -2.310878, -14.979302)
+transform = Transform3D(2.8499637, -0.5100423, 1.4477253, 0.44322604, 4.539415, 0.13217369, -4.1087294, 0.1359021, 1.0184529, 0, 0, 0)
 shape = SubResource("BoxShape3D_xg51m")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=827866533]
+[node name="Chest" type="StaticBody3D" parent="Room2" unique_id=1624493113]
+transform = Transform3D(0.014898337, -1.2594481e-09, 0.017325183, -0.0011153191, 0.022802602, 0.00095908844, -0.01728926, -0.0014709798, 0.014867433, -0.09738201, -1.1142181, -22.218138)
+
+[node name="Sketchfab_Scene2" parent="Room2/Chest" unique_id=387530279 instance=ExtResource("17_26187")]
+transform = Transform3D(1, 9.989044e-15, 1.4210855e-14, -1.0309243e-16, 1, -8.881784e-16, 0, -8.881784e-16, 1.0000001, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room2/Chest" unique_id=2073010158]
+transform = Transform3D(123.34501, 6.492435e-13, 0, -4.527213e-14, 67.45, 1.5745627e-11, -1.8189894e-12, -1.6825652e-11, 63.160004, 60.496727, 32.772694, -28.85321)
+shape = SubResource("BoxShape3D_kb84u")
+
+[node name="Big_oven" type="StaticBody3D" parent="Room2" unique_id=420055865]
+transform = Transform3D(2.0693777, 0.9681655, 0.039471623, 0.063743405, -0.043141037, -2.2837033, -0.9668709, 2.069304, -0.06607845, -2.8342593, -0.054076076, -21.512424)
+
+[node name="Mesh" parent="Room2/Big_oven" unique_id=739369971 instance=ExtResource("17_k2mhi")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room2/Big_oven" unique_id=1799922085]
+transform = Transform3D(0.935, 0, 0, 0, 2.105, 0, 0, 0, 0.415, 0, 1.0403398, 0.015758514)
+shape = SubResource("BoxShape3D_26187")
+
+[node name="water" type="MeshInstance3D" parent="Room2" unique_id=160730155]
+transform = Transform3D(4.7, 0, 0, 0, 1, 0, 0, 0, 10.74, 0, -0.2409544, -17.885098)
+mesh = SubResource("PlaneMesh_olaaw")
+skeleton = NodePath("../..")
+
+[node name="Lamp_stash" type="StaticBody3D" parent="Room2" unique_id=1484722393]
+
+[node name="Mesh" parent="Room2/Lamp_stash" unique_id=1055434286 instance=ExtResource("19_kb84u")]
+transform = Transform3D(-1.4099423, 0, -0.3384713, 0, 1.45, 0, 0.3384713, 0, -1.4099423, 1.089586, -4.339094, -19.978931)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room2/Lamp_stash" unique_id=861556503]
+transform = Transform3D(0.415, 0, 0, 0, 3.89, 0, 0, 0, 0.415, 1.0878129, -0.92659533, -19.9734)
+shape = SubResource("CylinderShape3D_kb84u")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Room2/Lamp_stash" unique_id=1990142996]
+transform = Transform3D(0.97747123, 1.4565457e-08, 0.21106893, -0.11317415, 0.8440941, 0.52411526, -0.17816202, -0.53619516, 0.82507765, 0.87266827, 2.1015022, -20.759562)
+light_energy = 16.0
+light_volumetric_fog_energy = 2.023
+shadow_enabled = true
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Room2/Lamp_stash" unique_id=1073614076]
+transform = Transform3D(-0.9608593, 0.027017012, -0.2757164, -0.17445305, 0.71412057, 0.67793655, 0.21521056, 0.6995012, -0.68145615, 1.2734203, 2.1015022, -19.215563)
+light_energy = 10.936
+light_volumetric_fog_energy = 2.826
+shadow_enabled = true
+
+[node name="Bord" type="StaticBody3D" parent="Room2" unique_id=435248595]
+transform = Transform3D(1.765, 0, 0, 0, 1, 0, 0, 0, 1.215, 0, 0, -27.682156)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Room2/Bord" unique_id=499506055]
+transform = Transform3D(2.2, 0, 0, 0, 0.2, 0, 0, 0, 1.2, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_su46k")
+mesh = SubResource("BoxMesh_wg5u2")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room2/Bord" unique_id=498213707]
+transform = Transform3D(2.2, 0, 0, 0, 0.2, 0, 0, 0, 1.2, 0, 0, 0)
+shape = SubResource("BoxShape3D_qrmfv")
+
+[node name="Light" type="Node3D" parent="Room2" unique_id=724376248]
+transform = Transform3D(0.97747123, 1.4565457e-08, 0.21106893, -0.11317415, 0.8440941, 0.52411526, -0.17816202, -0.53619516, 0.82507765, 0.87266827, 2.1015022, -20.759562)
+
+[node name="Sketchfab_Scene" parent="Room2/Light" unique_id=144965965 instance=ExtResource("20_su46k")]
+transform = Transform3D(1.7130685, -0.57165515, 0.2258445, 0.5713021, 1.2341868, -1.2094609, 0.22673619, 1.2092935, 1.3411189, -3.3300266, -3.8078737, 9.452599)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Room2/Light/Sketchfab_Scene" unique_id=1784456882]
+transform = Transform3D(0.51047015, 0.114599936, 0.16787769, -0.17104527, -0.0029860917, 0.52214044, 0.10981619, -0.5373581, 0.032900926, -0.02115035, 0.17441559, -0.0086236)
+light_energy = 7.0
+shadow_enabled = true
+
+[node name="Sketchfab_Scene2" parent="Room2/Light" unique_id=1627106239 instance=ExtResource("20_su46k")]
+transform = Transform3D(0.5233693, -0.52858156, 1.66105, 1.4671328, 1.0700918, -0.121742904, -0.94127816, 1.3740091, 0.73382115, -0.493634, 4.957962, -3.6828928)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Room2/Light/Sketchfab_Scene2" unique_id=1639758152]
+transform = Transform3D(0.51047015, 0.114599936, 0.16787769, -0.17104527, -0.0029860917, 0.52214044, 0.10981619, -0.5373581, 0.032900926, -0.02115035, 0.17441559, -0.0086236)
+light_energy = 7.0
+shadow_enabled = true
+
+[node name="Sketchfab_Scene3" parent="Room2/Light" unique_id=809862243 instance=ExtResource("20_su46k")]
+transform = Transform3D(1.4597294, -1.0792742, -0.12943956, 1.0184901, 1.4337108, -0.46855712, 0.3798239, 0.3033704, 1.7538826, -3.70007, 1.4014387, 1.5090551)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Room2/Light/Sketchfab_Scene3" unique_id=863804699]
+transform = Transform3D(0.5074823, 0.113320105, 0.17752798, -0.16897632, -0.057380635, 0.51966417, 0.12571661, -0.5345669, -0.018147979, -0.20976543, -0.04926753, -0.05425644)
+light_energy = 10.044
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1677790997]
+environment = SubResource("Environment_2j60g")
