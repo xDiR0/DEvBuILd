@@ -12,9 +12,15 @@ var camera_rotation_x = 0.0
 
 
 func _ready():
+	add_to_group("player")
+	teleport_to_spawn()
+func teleport_to_spawn():
+	# Ищем точку спавна в текущей сцене
+	var spawn_node = get_tree().root.get_node_or_null(str(get_tree().current_scene.get_path()) + "/" + Global.spawn_point_name)
+	if spawn_node:
+		global_position = spawn_node.global_position
+	Global.spawn_point_name = "start"
 	camera_animations.animation_finished.connect(_on_animation_finished)
-	
-	
 	# ========== ПРОВЕРКА КОМНАТЫ ДЛЯ WAKE_UP ==========
 	var current_scene_name = get_tree().current_scene.name
 		# Проверяем, находится ли игрок в Room1
@@ -25,8 +31,6 @@ func _ready():
 		print("Игрок не в Room1, анимация пропущена")
 		can_move = true  # Сразу разрешаем движение
 	# =================================================
-	
-	
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 func _on_animation_finished(anim_name: String):
 	if anim_name == "wake_up":

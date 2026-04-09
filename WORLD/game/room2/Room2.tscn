@@ -20,7 +20,6 @@
 [ext_resource type="PackedScene" uid="uid://f3d6ajwpf7vy" path="res://WORLD/game/room2/props2/dusty_old_bookshelf_free.glb" id="17_k2mhi"]
 [ext_resource type="PackedScene" uid="uid://dmsam8l5ax12i" path="res://WORLD/game/room2/props2/street_light_lamp_spotlight_-_10mb.glb" id="19_kb84u"]
 [ext_resource type="PackedScene" uid="uid://cqpevv232yhqj" path="res://WORLD/game/room2/props2/broken_ceiling_lamp.glb" id="20_su46k"]
-[ext_resource type="Texture2D" uid="uid://dvbtbqw2nqcic" path="res://WORLD/game/room1/satara_night_no_lamps_4k.exr" id="20_uy4is"]
 [ext_resource type="PackedScene" uid="uid://0delpc5domlt" path="res://WORLD/game/room2/props2/blue_metal_door.glb" id="21_su46k"]
 
 [sub_resource type="Animation" id="Animation_su46k"]
@@ -363,28 +362,6 @@ uv1_triplanar = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qrmfv"]
 
-[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_wg5u2"]
-panorama = ExtResource("20_uy4is")
-
-[sub_resource type="Sky" id="Sky_qrmfv"]
-sky_material = SubResource("PanoramaSkyMaterial_wg5u2")
-
-[sub_resource type="Environment" id="Environment_2j60g"]
-background_mode = 2
-sky = SubResource("Sky_qrmfv")
-ambient_light_source = 3
-reflected_light_source = 2
-tonemap_mode = 3
-ssr_enabled = true
-sdfgi_enabled = true
-sdfgi_use_occlusion = true
-sdfgi_cascades = 8
-volumetric_fog_enabled = true
-volumetric_fog_albedo = Color(0.8067547, 0.56001747, 0.3583569, 1)
-volumetric_fog_emission = Color(0.19800925, 0.103438504, 0.020667668, 1)
-volumetric_fog_ambient_inject = 0.1
-adjustment_enabled = true
-
 [node name="Room2" type="Node3D" unique_id=891588213]
 
 [node name="PLAYER" parent="." unique_id=1030635555 instance=ExtResource("1_olaaw")]
@@ -643,4 +620,3 @@ light_energy = 10.044
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1677790997]
-environment = SubResource("Environment_2j60g")
