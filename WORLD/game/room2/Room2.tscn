@@ -18,9 +18,39 @@
 [ext_resource type="PackedScene" uid="uid://2d7mwgats57q" path="res://WORLD/game/room2/props2/Metal_shelf.tscn" id="9_xg51m"]
 [ext_resource type="PackedScene" uid="uid://cfhmg3kuirypv" path="res://WORLD/game/room2/props2/old_chest.glb" id="17_26187"]
 [ext_resource type="PackedScene" uid="uid://f3d6ajwpf7vy" path="res://WORLD/game/room2/props2/dusty_old_bookshelf_free.glb" id="17_k2mhi"]
+[ext_resource type="Script" uid="uid://cg8v1j7mgym4t" path="res://WORLD/game/room2/chest.gd" id="17_wg5u2"]
 [ext_resource type="PackedScene" uid="uid://dmsam8l5ax12i" path="res://WORLD/game/room2/props2/street_light_lamp_spotlight_-_10mb.glb" id="19_kb84u"]
 [ext_resource type="PackedScene" uid="uid://cqpevv232yhqj" path="res://WORLD/game/room2/props2/broken_ceiling_lamp.glb" id="20_su46k"]
 [ext_resource type="PackedScene" uid="uid://0delpc5domlt" path="res://WORLD/game/room2/props2/blue_metal_door.glb" id="21_su46k"]
+[ext_resource type="Texture2D" uid="uid://dvbtbqw2nqcic" path="res://WORLD/game/room1/satara_night_no_lamps_4k.exr" id="22_wg5u2"]
+
+[sub_resource type="Animation" id="Animation_qrmfv"]
+resource_name = "Chest_room2"
+length = 3.23
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Room2/Chest:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 3.23, 3.2333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-1.1224763, -3.4633713, -23.170485), Vector3(-0.11686683, -1.5454962, -23.170485), Vector3(-0.15234703, -1.0500903, -22.567516), Vector3(-0.5596857, -1.2629395, -22.755224)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Room2/Chest:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2, 3.23, 3.2333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.95926046, -0.87028897, -2.2476554), Vector3(-0.126932, 1.2070985, 0.14130896), Vector3(-0.2574093, 1.076105, -0.087757275), Vector3(0.19784792, 0.8025365, -0.090725996)]
+}
 
 [sub_resource type="Animation" id="Animation_su46k"]
 length = 0.001
@@ -95,6 +125,30 @@ tracks/5/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector3(1.5371051, 2.6031277, 2.1657763)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Room2/Chest:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-1.1224763, -3.4633713, -23.170485)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Room2/Chest:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.95926046, -0.87028897, -2.2476554)]
 }
 
 [sub_resource type="Animation" id="Animation_wg5u2"]
@@ -176,6 +230,7 @@ tracks/5/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qrmfv"]
 _data = {
+&"Chest_room2": SubResource("Animation_qrmfv"),
 &"RESET": SubResource("Animation_su46k"),
 &"float": SubResource("Animation_wg5u2")
 }
@@ -335,6 +390,8 @@ material = SubResource("StandardMaterial3D_dbrw0")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_26187"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_2j60g"]
+
 [sub_resource type="PlaneMesh" id="PlaneMesh_olaaw"]
 material = ExtResource("6_s2t11")
 
@@ -361,6 +418,28 @@ uv1_triplanar = true
 [sub_resource type="BoxMesh" id="BoxMesh_wg5u2"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qrmfv"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_qrmfv"]
+panorama = ExtResource("22_wg5u2")
+
+[sub_resource type="Sky" id="Sky_2j60g"]
+sky_material = SubResource("PanoramaSkyMaterial_qrmfv")
+
+[sub_resource type="Environment" id="Environment_dms4i"]
+background_mode = 2
+sky = SubResource("Sky_2j60g")
+ambient_light_source = 3
+reflected_light_source = 2
+tonemap_mode = 3
+ssr_enabled = true
+sdfgi_enabled = true
+sdfgi_use_occlusion = true
+sdfgi_cascades = 8
+volumetric_fog_enabled = true
+volumetric_fog_albedo = Color(0.8067547, 0.56001747, 0.3583569, 1)
+volumetric_fog_emission = Color(0.19800925, 0.103438504, 0.020667668, 1)
+volumetric_fog_ambient_inject = 0.1
+adjustment_enabled = true
 
 [node name="Room2" type="Node3D" unique_id=891588213]
 
@@ -535,10 +614,11 @@ transform = Transform3D(2.8499637, -0.5100423, 1.4477253, 0.44322604, 4.539415, 
 shape = SubResource("BoxShape3D_xg51m")
 
 [node name="Chest" type="StaticBody3D" parent="Room2" unique_id=1624493113]
-transform = Transform3D(0.014898337, -1.2594481e-09, 0.017325183, -0.0011153191, 0.022802602, 0.00095908844, -0.01728926, -0.0014709798, 0.014867433, -0.09738201, -1.1142181, -22.218138)
+transform = Transform3D(0.0019243371, 0.020440847, -0.010029496, -0.010226655, -0.008216907, -0.018708821, -0.020342926, 0.006064346, 0.00845643, -1.1224763, -3.4633713, -23.170485)
+script = ExtResource("17_wg5u2")
 
-[node name="Sketchfab_Scene2" parent="Room2/Chest" unique_id=387530279 instance=ExtResource("17_26187")]
-transform = Transform3D(1, 9.989044e-15, 1.4210855e-14, -1.0309243e-16, 1, -8.881784e-16, 0, -8.881784e-16, 1.0000001, 0, 0, 0)
+[node name="ChestMesh" parent="Room2/Chest" unique_id=387530279 instance=ExtResource("17_26187")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Room2/Chest" unique_id=2073010158]
 transform = Transform3D(123.34501, 6.492435e-13, 0, -4.527213e-14, 67.45, 1.5745627e-11, -1.8189894e-12, -1.6825652e-11, 63.160004, 60.496727, 32.772694, -28.85321)
@@ -552,6 +632,13 @@ transform = Transform3D(2.0693777, 0.9681655, 0.039471623, 0.063743405, -0.04314
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Room2/Big_oven" unique_id=1799922085]
 transform = Transform3D(0.935, 0, 0, 0, 2.105, 0, 0, 0, 0.415, 0, 1.0403398, 0.015758514)
 shape = SubResource("BoxShape3D_26187")
+
+[node name="ActivateZone" type="Area3D" parent="Room2" unique_id=1994225272]
+transform = Transform3D(0.9132186, 2.9802322e-08, 0.40746987, 0, 1, -1.4901161e-08, -0.40746996, -7.450581e-09, 0.9132186, -1.8282399, 1.4165006, -19.387657)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room2/ActivateZone" unique_id=1088290947]
+transform = Transform3D(2.12, 0, 0, 0, 4.495, 0, 0, 0, 5.16, 0, 0, 0)
+shape = SubResource("BoxShape3D_2j60g")
 
 [node name="water" type="MeshInstance3D" parent="Room2" unique_id=160730155]
 transform = Transform3D(4.7, 0, 0, 0, 1, 0, 0, 0, 10.74, 0, -0.2409544, -17.885098)
@@ -619,4 +706,5 @@ transform = Transform3D(0.5074823, 0.113320105, 0.17752798, -0.16897632, -0.0573
 light_energy = 10.044
 shadow_enabled = true
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1677790997]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=146509299]
+environment = SubResource("Environment_dms4i")
