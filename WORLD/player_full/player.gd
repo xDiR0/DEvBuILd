@@ -7,8 +7,8 @@ var can_move = false
 @export var mouse_sensitivity : float = 0.002
 @onready var camera_3d: Camera3D = $Camera3D
 @onready var camera_animations: AnimationPlayer = $Camera_animations
+@onready var mesh_instance: MeshInstance3D = $MeshInstance3D
 var camera_rotation_x = 0.0
-
 
 
 func _ready():
@@ -27,15 +27,28 @@ func teleport_to_spawn():
 	if current_scene_name == "Room1":
 		print("Пробуждение в Room1...")
 		camera_animations.play("wake_up")
+		start_blinking()
 	else:
 		print("Игрок не в Room1, анимация пропущена")
 		can_move = true  # Сразу разрешаем движение
 	# =================================================
+	
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+func start_blinking():
+	await get_tree().process_frame
+	var blink_rect = ColorRect.new()
+	blink_rect.color = Color(0, 0, 0, 1)
+	blink_rect.size = get_viewport().size
+	blink_rect.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	get_viewport().add_child(blink_rect)
+	var tween = create_tween().set_loops(3)
+	tween.tween_property(blink_rect, "color:a", 0.0, 1)
+	tween.tween_property(blink_rect, "color:a", 1.0, 1)
+	tween.tween_interval(1)
+	tween.finished.connect(blink_rect.queue_free)
 func _on_animation_finished(anim_name: String):
 	if anim_name == "wake_up":
 		can_move = true
-		
 func _input(event):
 	# КАМЕРА
 	if event is InputEventMouseMotion and can_move:
@@ -43,7 +56,6 @@ func _input(event):
 		camera_rotation_x = clamp(camera_rotation_x, -1.5, 1.5)
 		camera_3d.rotation.x = camera_rotation_x
 		rotation.y -= event.relative.x * mouse_sensitivity
-
 func _physics_process(delta):
 	if not can_move:
 		return

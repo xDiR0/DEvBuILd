@@ -42,7 +42,6 @@ func _on_voice_command(cmd: String):
 	if cmd == "open" and not is_open:
 		is_animating = true
 		animation_player.play("Chest_room2")
-
 # Когда анимация закончилась
 func _on_animation_finished(anim_name: String):
 	is_animating = false
