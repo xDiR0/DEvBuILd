@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://cqpevv232yhqj" path="res://WORLD/game/room2/props2/broken_ceiling_lamp.glb" id="20_su46k"]
 [ext_resource type="PackedScene" uid="uid://0delpc5domlt" path="res://WORLD/game/room2/props2/blue_metal_door.glb" id="21_su46k"]
 [ext_resource type="Texture2D" uid="uid://dvbtbqw2nqcic" path="res://WORLD/game/room1/satara_night_no_lamps_4k.exr" id="22_wg5u2"]
+[ext_resource type="PackedScene" uid="uid://br2x6iqyhwy0k" path="res://WORLD/game/room2/props2/exit_box.glb" id="24_2j60g"]
 
 [sub_resource type="Animation" id="Animation_qrmfv"]
 resource_name = "Chest_room2"
@@ -614,7 +615,7 @@ transform = Transform3D(2.8499637, -0.5100423, 1.4477253, 0.44322604, 4.539415, 
 shape = SubResource("BoxShape3D_xg51m")
 
 [node name="Chest" type="StaticBody3D" parent="Room2" unique_id=1624493113]
-transform = Transform3D(0.0019243371, 0.020440847, -0.010029496, -0.010226655, -0.008216907, -0.018708821, -0.020342926, 0.006064346, 0.00845643, -1.1224763, -3.4633713, -23.170485)
+transform = Transform3D(0.0019243369, 0.020440845, -0.010029496, -0.010226654, -0.008216907, -0.018708821, -0.020342924, 0.0060643456, 0.00845643, -1.1224763, -3.4633713, -23.170485)
 script = ExtResource("17_wg5u2")
 
 [node name="ChestMesh" parent="Room2/Chest" unique_id=387530279 instance=ExtResource("17_26187")]
@@ -708,3 +709,15 @@ shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=146509299]
 environment = SubResource("Environment_dms4i")
+
+[node name="Exit_box" type="StaticBody3D" parent="." unique_id=452177030]
+transform = Transform3D(-8.3270194e-08, 0, -1.905, 0, 1.905, 0, 1.905, 0, -8.3270194e-08, -0.034020513, 3.671874, -28.286274)
+
+[node name="MEsh" parent="Exit_box" unique_id=1580688627 instance=ExtResource("24_2j60g")]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Exit_box" unique_id=101110558]
+transform = Transform3D(0.5249344, 0, -2.842171e-14, 0, 0.5249344, 0, 2.842171e-14, 0, 0.5249344, 0.14805317, -0.0104391575, 0.011870177)
+light_color = Color(0, 0.85882354, 0, 1)
+light_energy = 0.407
+light_size = 8.41
+shadow_enabled = true

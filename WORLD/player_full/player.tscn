@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bflclbxwf6a7q" path="res://WORLD/player_full/player.gd" id="1_y4n5c"]
 [ext_resource type="PackedScene" uid="uid://dwucrsjapwm6c" path="res://WORLD/player_full/ui_player/UI_manager.tscn" id="2_bribb"]
+[ext_resource type="Shader" uid="uid://djft5quk0d67f" path="res://WORLD/player_full/VHS.gdshader" id="2_ki2w4"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gvhyq"]
 
@@ -101,6 +102,31 @@ _data = {
 &"walk": SubResource("Animation_imdcf")
 }
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nbe0y"]
+shader = ExtResource("2_ki2w4")
+shader_parameter/brightness = 1.02
+shader_parameter/contrast = 1.08
+shader_parameter/saturation = 1.1
+shader_parameter/gamma = 1.05
+shader_parameter/curvature = 0.14
+shader_parameter/corner_soften = 0.06
+shader_parameter/vignette = 0.38
+shader_parameter/scanline_strength = 0.95
+shader_parameter/scanline_density = 1.15
+shader_parameter/interlace_strength = 0.2
+shader_parameter/mask_strength = 0.22
+shader_parameter/mask_scale = 1.0
+shader_parameter/chroma_offset_px = 1.6
+shader_parameter/luma_smear_px = 2.2
+shader_parameter/jitter_px = 1.8
+shader_parameter/wobble_px = 1.5
+shader_parameter/tape_noise = 0.22
+shader_parameter/tape_lines = 0.35
+shader_parameter/roll_speed = 0.1
+shader_parameter/roll_strength = 0.15
+shader_parameter/glow_strength = 0.25
+shader_parameter/glow_threshold = 0.65
+
 [node name="PLAYER" type="Node3D" unique_id=1030635555]
 
 [node name="Player" type="CharacterBody3D" parent="." unique_id=1828625760]
@@ -127,4 +153,13 @@ playback_default_blend_time = 2.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=336868386]
 
-[node name="Control" parent="." unique_id=1204227680 instance=ExtResource("2_bribb")]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1798988847]
+material = SubResource("ShaderMaterial_nbe0y")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Control" parent="CanvasLayer" unique_id=1204227680 instance=ExtResource("2_bribb")]
