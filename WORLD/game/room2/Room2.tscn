@@ -423,12 +423,21 @@ uv1_triplanar = true
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_qrmfv"]
 panorama = ExtResource("22_wg5u2")
 
+<<<<<<< Updated upstream
 [sub_resource type="Sky" id="Sky_2j60g"]
 sky_material = SubResource("PanoramaSkyMaterial_qrmfv")
+=======
+[sub_resource type="Sky" id="Sky_wg5u2"]
+sky_material = SubResource("PanoramaSkyMaterial_wg5u2")
+>>>>>>> Stashed changes
 
 [sub_resource type="Environment" id="Environment_dms4i"]
 background_mode = 2
+<<<<<<< Updated upstream
 sky = SubResource("Sky_2j60g")
+=======
+sky = SubResource("Sky_wg5u2")
+>>>>>>> Stashed changes
 ambient_light_source = 3
 reflected_light_source = 2
 tonemap_mode = 3

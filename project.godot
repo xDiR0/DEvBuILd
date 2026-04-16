@@ -21,7 +21,7 @@ config/icon="res://another/icon.svg"
 
 [audio]
 
-buses/default_bus_layout="uid://ctlrfjywt8f41"
+buses/default_bus_layout=""
 driver/enable_input=true
 
 [autoload]
@@ -32,6 +32,7 @@ Global="*uid://c5dx1dgcodqtc"
 
 [display]
 
+window/size/mode=2
 window/size/borderless=true
 window/stretch/mode="canvas_items"
 
