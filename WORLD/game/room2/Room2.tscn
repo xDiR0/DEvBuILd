@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://cqpevv232yhqj" path="res://WORLD/game/room2/props2/broken_ceiling_lamp.glb" id="20_su46k"]
 [ext_resource type="PackedScene" uid="uid://0delpc5domlt" path="res://WORLD/game/room2/props2/blue_metal_door.glb" id="21_su46k"]
 [ext_resource type="PackedScene" uid="uid://br2x6iqyhwy0k" path="res://WORLD/game/room2/props2/exit_box.glb" id="24_2j60g"]
+[ext_resource type="Script" uid="uid://dcfd3lcpc6r0f" path="res://WORLD/game/room2/portal2.gd" id="24_dms4i"]
 
 [sub_resource type="Animation" id="Animation_qrmfv"]
 resource_name = "Chest_room2"
@@ -434,6 +435,8 @@ volumetric_fog_emission = Color(0.19800925, 0.103438504, 0.020667668, 1)
 volumetric_fog_ambient_inject = 0.1
 adjustment_enabled = true
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_dms4i"]
+
 [node name="Room2" type="Node3D" unique_id=891588213]
 
 [node name="PLAYER" parent="." unique_id=1030635555 instance=ExtResource("1_olaaw")]
@@ -607,7 +610,7 @@ transform = Transform3D(2.8499637, -0.5100423, 1.4477253, 0.44322604, 4.539415, 
 shape = SubResource("BoxShape3D_xg51m")
 
 [node name="Chest" type="StaticBody3D" parent="Room2" unique_id=1624493113]
-transform = Transform3D(0.0019243367, 0.020440841, -0.010029496, -0.010226652, -0.008216905, -0.018708821, -0.02034292, 0.0060643447, 0.00845643, -1.1224763, -3.4633713, -23.170485)
+transform = Transform3D(0.0019243362, 0.020440836, -0.010029496, -0.01022665, -0.008216904, -0.018708821, -0.020342916, 0.0060643433, 0.00845643, -1.1224763, -3.4633713, -23.170485)
 script = ExtResource("17_wg5u2")
 
 [node name="ChestMesh" parent="Room2/Chest" unique_id=387530279 instance=ExtResource("17_26187")]
@@ -713,3 +716,14 @@ light_color = Color(0, 0.85882354, 0, 1)
 light_energy = 0.407
 light_size = 8.41
 shadow_enabled = true
+
+[node name="Portal" type="Area3D" parent="." unique_id=1228820062]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7443162, -28.272888)
+script = ExtResource("24_dms4i")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Portal" unique_id=1710625496]
+transform = Transform3D(1.08, 0, 0, 0, 2.49, 0, 0, 0, 0.3, 0, 0, 0)
+shape = SubResource("BoxShape3D_dms4i")
+
+[node name="start" type="Marker3D" parent="." unique_id=803323388]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.95241475, -6.706314)

@@ -205,7 +205,6 @@ text = "Fullscreen"
 script = ExtResource("3_8m6gm")
 
 [node name="SOUND" type="Panel" parent="." unique_id=1085671540]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -274,7 +273,6 @@ theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_0emvn")
 min_value = -80.0
 max_value = 0.0
 script = ExtResource("4_0emvn")
-audio_bus_name = "Music"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SOUND" unique_id=94655718]
 stream = ExtResource("4_3u8p1")

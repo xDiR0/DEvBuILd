@@ -21,7 +21,7 @@ config/icon="res://another/icon.svg"
 
 [audio]
 
-buses/default_bus_layout=""
+buses/default_bus_layout="uid://b0synp2ul5wf6"
 driver/enable_input=true
 
 [autoload]
