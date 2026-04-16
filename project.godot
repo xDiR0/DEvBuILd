@@ -29,6 +29,7 @@ driver/enable_input=true
 VoiceManager="*uid://o23brhqiux6y"
 SettingsManager="*uid://cu7cngr7wfhbn"
 Global="*uid://c5dx1dgcodqtc"
+MusicManager="*uid://r6c4xgg1hhli"
 
 [display]
 

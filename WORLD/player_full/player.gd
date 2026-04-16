@@ -23,9 +23,7 @@ func teleport_to_spawn():
 	camera_animations.animation_finished.connect(_on_animation_finished)
 	# ========== ПРОВЕРКА КОМНАТЫ ДЛЯ WAKE_UP ==========
 	var current_scene_name = get_tree().current_scene.name
-		# Проверяем, находится ли игрок в Room1
 	if current_scene_name == "Room1":
-		print("Пробуждение в Room1...")
 		camera_animations.play("wake_up")
 		start_blinking()
 	else:

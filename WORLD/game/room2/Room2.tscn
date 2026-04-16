@@ -615,7 +615,7 @@ transform = Transform3D(2.8499637, -0.5100423, 1.4477253, 0.44322604, 4.539415, 
 shape = SubResource("BoxShape3D_xg51m")
 
 [node name="Chest" type="StaticBody3D" parent="Room2" unique_id=1624493113]
-transform = Transform3D(0.0019243369, 0.020440845, -0.010029496, -0.010226654, -0.008216907, -0.018708821, -0.020342924, 0.0060643456, 0.00845643, -1.1224763, -3.4633713, -23.170485)
+transform = Transform3D(0.0019243368, 0.020440843, -0.010029496, -0.010226653, -0.008216906, -0.018708821, -0.020342922, 0.006064345, 0.00845643, -1.1224763, -3.4633713, -23.170485)
 script = ExtResource("17_wg5u2")
 
 [node name="ChestMesh" parent="Room2/Chest" unique_id=387530279 instance=ExtResource("17_26187")]
