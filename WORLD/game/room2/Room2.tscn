@@ -22,7 +22,6 @@
 [ext_resource type="PackedScene" uid="uid://dmsam8l5ax12i" path="res://WORLD/game/room2/props2/street_light_lamp_spotlight_-_10mb.glb" id="19_kb84u"]
 [ext_resource type="PackedScene" uid="uid://cqpevv232yhqj" path="res://WORLD/game/room2/props2/broken_ceiling_lamp.glb" id="20_su46k"]
 [ext_resource type="PackedScene" uid="uid://0delpc5domlt" path="res://WORLD/game/room2/props2/blue_metal_door.glb" id="21_su46k"]
-[ext_resource type="Texture2D" uid="uid://dvbtbqw2nqcic" path="res://WORLD/game/room1/satara_night_no_lamps_4k.exr" id="22_wg5u2"]
 [ext_resource type="PackedScene" uid="uid://br2x6iqyhwy0k" path="res://WORLD/game/room2/props2/exit_box.glb" id="24_2j60g"]
 
 [sub_resource type="Animation" id="Animation_qrmfv"]
@@ -420,24 +419,8 @@ uv1_triplanar = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qrmfv"]
 
-[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_qrmfv"]
-panorama = ExtResource("22_wg5u2")
-
-<<<<<<< Updated upstream
-[sub_resource type="Sky" id="Sky_2j60g"]
-sky_material = SubResource("PanoramaSkyMaterial_qrmfv")
-=======
-[sub_resource type="Sky" id="Sky_wg5u2"]
-sky_material = SubResource("PanoramaSkyMaterial_wg5u2")
->>>>>>> Stashed changes
-
 [sub_resource type="Environment" id="Environment_dms4i"]
-background_mode = 2
-<<<<<<< Updated upstream
-sky = SubResource("Sky_2j60g")
-=======
-sky = SubResource("Sky_wg5u2")
->>>>>>> Stashed changes
+background_mode = 1
 ambient_light_source = 3
 reflected_light_source = 2
 tonemap_mode = 3
@@ -624,7 +607,7 @@ transform = Transform3D(2.8499637, -0.5100423, 1.4477253, 0.44322604, 4.539415, 
 shape = SubResource("BoxShape3D_xg51m")
 
 [node name="Chest" type="StaticBody3D" parent="Room2" unique_id=1624493113]
-transform = Transform3D(0.0019243368, 0.020440843, -0.010029496, -0.010226653, -0.008216906, -0.018708821, -0.020342922, 0.006064345, 0.00845643, -1.1224763, -3.4633713, -23.170485)
+transform = Transform3D(0.0019243367, 0.020440841, -0.010029496, -0.010226652, -0.008216905, -0.018708821, -0.02034292, 0.0060643447, 0.00845643, -1.1224763, -3.4633713, -23.170485)
 script = ExtResource("17_wg5u2")
 
 [node name="ChestMesh" parent="Room2/Chest" unique_id=387530279 instance=ExtResource("17_26187")]
