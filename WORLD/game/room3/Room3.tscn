@@ -110,7 +110,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.886874, 0.05065906, 10.905
 
 [node name="floor" type="StaticBody3D" parent="Room3" unique_id=747603012]
 transform = Transform3D(-13, 8.742278e-09, 0, -1.136496e-06, -0.1, 0, 0, 0, 25.000004, 0, 4.6910734, 0)
-visible = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Room3/floor" unique_id=146541708]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.928676e-05, 0.18285751, -0.00054715475)

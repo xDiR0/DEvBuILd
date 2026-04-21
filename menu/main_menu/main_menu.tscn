@@ -57,12 +57,12 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_o5w3e")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1966539398]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
+anchors_preset = -1
+anchor_left = 0.49500003
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -131.0
+offset_left = -125.24005
 offset_top = 10.0
 offset_right = 130.99902
 offset_bottom = 143.0
@@ -78,7 +78,17 @@ theme_override_font_sizes/font_size = 28
 theme_override_styles/normal = SubResource("StyleBoxFlat_cwfi3")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_f5okj")
 theme_override_styles/hover = SubResource("StyleBoxFlat_o5w3e")
-text = "START GAME"
+text = "NEW GAME"
+
+[node name="Button_continue" type="Button" parent="VBoxContainer" unique_id=473474168]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxFlat_cwfi3")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_f5okj")
+theme_override_styles/hover = SubResource("StyleBoxFlat_o5w3e")
+text = "CONTINUE"
 
 [node name="Button_options" type="Button" parent="VBoxContainer" unique_id=1029821713]
 layout_mode = 2
@@ -121,8 +131,9 @@ theme_override_constants/shadow_offset_y = 2
 theme_override_constants/outline_size = 3
 theme_override_fonts/font = ExtResource("1_chmv6")
 theme_override_font_sizes/font_size = 90
-text = "GODOT GAME"
+text = "    SODIUM"
 
 [connection signal="pressed" from="VBoxContainer/Button_start" to="." method="_on_button_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button_continue" to="." method="_on_button_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button_options" to="." method="_on_button_options_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button_exit" to="." method="_on_button_exit_pressed"]
