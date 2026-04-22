@@ -46,7 +46,6 @@ func save_and_exit():
 	Global.save_game()
 	get_tree().paused = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	get_tree().change_scene_to_file("res://menu/main_menu/main_menu.tscn")
 
 func return_to_main_menu():
 	get_tree().paused = false

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dia6gxdds6fkl"]
 
 [ext_resource type="FontFile" uid="uid://ddqafd1p0wck4" path="res://menu/main_menu/GrimoireOfDeath-Regular.otf" id="1_30722"]
-[ext_resource type="Script" path="res://WORLD/player_full/pause_player/PauseMenu.gd" id="2_pause"]
+[ext_resource type="Script" uid="uid://b74ihgmj346c6" path="res://WORLD/player_full/pause_player/PauseMenu.gd" id="2_pause"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_30722"]
 bg_color = Color(0, 0, 0, 0.3137255)
@@ -61,7 +61,7 @@ text = "Settings"
 
 [node name="SaveAndExitButton" type="Button" parent="Panel/VBoxContainer" unique_id=2111104713]
 layout_mode = 2
-text = "Save and exit"
+text = "Save "
 
 [node name="MainMenuButton" type="Button" parent="Panel/VBoxContainer" unique_id=1025758467]
 layout_mode = 2

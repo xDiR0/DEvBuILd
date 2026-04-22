@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://csxtbcjx00q01" path="res://menu/main_menu/main_menu_fon.jpg" id="1_wq1ue"]
 [ext_resource type="Script" uid="uid://7ps7efiabr5t" path="res://menu/menu_settings/fullscreen_control.gd" id="3_8m6gm"]
 [ext_resource type="Script" uid="uid://cbsmwvxp4p1k7" path="res://menu/menu_settings/audio_control.gd" id="4_0emvn"]
-[ext_resource type="AudioStream" uid="uid://bpifuxn8i8jha" path="res://menu/menu_settings/sound/echoes-of-the-abyss_87954.mp3" id="4_3u8p1"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pbbjw"]
 texture = ExtResource("1_wq1ue")
@@ -137,7 +136,6 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_8m6gm")
 text = "  BACK"
 
 [node name="SCREEN" type="Panel" parent="." unique_id=66444283]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -200,7 +198,6 @@ offset_right = 73.5
 offset_bottom = -38.5
 grow_horizontal = 2
 grow_vertical = 2
-button_pressed = true
 text = "Fullscreen"
 script = ExtResource("3_8m6gm")
 
@@ -273,11 +270,6 @@ theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_0emvn")
 min_value = -80.0
 max_value = 0.0
 script = ExtResource("4_0emvn")
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SOUND" unique_id=94655718]
-stream = ExtResource("4_3u8p1")
-autoplay = true
-bus = &"Music"
 
 [connection signal="pressed" from="SETTINGS/SCREEN" to="." method="_on_screen_pressed"]
 [connection signal="pressed" from="SETTINGS/GRAPHICS" to="." method="_on_graphics_pressed"]
