@@ -1,9 +1,11 @@
 extends Control
 
+@onready var button_continue: Button = $VBoxContainer/Button_continue
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	button_continue.disabled = not Global.has_save()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -12,7 +14,12 @@ func _process(delta: float) -> void:
 
 
 func _on_button_start_pressed() -> void:
-	get_tree().change_scene_to_file("res://WORLD/game/room1/Room1.tscn")
+	Global.start_new_game()
+
+
+func _on_button_continue_pressed() -> void:
+	if not Global.load_game():
+		Global.start_new_game()
 
 
 func _on_button_options_pressed() -> void:

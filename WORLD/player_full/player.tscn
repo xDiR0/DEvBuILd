@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bflclbxwf6a7q" path="res://WORLD/player_full/player.gd" id="1_y4n5c"]
 [ext_resource type="PackedScene" uid="uid://dwucrsjapwm6c" path="res://WORLD/player_full/ui_player/UI_manager.tscn" id="2_bribb"]
 [ext_resource type="Shader" uid="uid://djft5quk0d67f" path="res://WORLD/player_full/VHS.gdshader" id="2_ki2w4"]
+[ext_resource type="PackedScene" uid="uid://dia6gxdds6fkl" path="res://WORLD/player_full/pause_player/pause_menu.tscn" id="3_pause"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gvhyq"]
 
@@ -149,3 +150,5 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="Control" parent="CanvasLayer" unique_id=1204227680 instance=ExtResource("2_bribb")]
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("3_pause")]

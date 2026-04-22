@@ -15,7 +15,10 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_back_pressed() -> void:
-	get_tree().change_scene_to_file("res://menu/main_menu/main_menu.tscn")
+	if Global.settings_return_to_game:
+		Global.return_to_game_from_settings()
+	else:
+		get_tree().change_scene_to_file("res://menu/main_menu/main_menu.tscn")
 
 
 

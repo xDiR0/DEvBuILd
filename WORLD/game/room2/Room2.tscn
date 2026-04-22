@@ -24,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://0delpc5domlt" path="res://WORLD/game/room2/props2/blue_metal_door.glb" id="21_su46k"]
 [ext_resource type="PackedScene" uid="uid://br2x6iqyhwy0k" path="res://WORLD/game/room2/props2/exit_box.glb" id="24_2j60g"]
 [ext_resource type="Script" uid="uid://dcfd3lcpc6r0f" path="res://WORLD/game/room2/portal2.gd" id="24_dms4i"]
+[ext_resource type="Script" uid="uid://drj6ma7xgyxag" path="res://WORLD/game/DamageArea.gd" id="25_water_damage"]
 
 [sub_resource type="Animation" id="Animation_qrmfv"]
 resource_name = "Chest_room2"
@@ -396,6 +397,9 @@ material = SubResource("StandardMaterial3D_dbrw0")
 [sub_resource type="PlaneMesh" id="PlaneMesh_olaaw"]
 material = ExtResource("6_s2t11")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_water_damage"]
+size = Vector3(8.8, 1.8, 19.4)
+
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_kb84u"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_26187"]
@@ -450,6 +454,9 @@ autoplay = &"float"
 
 [node name="door" parent="Room2" unique_id=782524595 instance=ExtResource("21_su46k")]
 transform = Transform3D(1, 0, -2.9802322e-08, 3.7252903e-09, 1, -1.8626451e-09, -2.9802322e-08, 3.7252903e-09, 0.99999994, 0.033177435, -0.39114237, -8.479864)
+
+[node name="door2" parent="Room2" unique_id=1896040917 instance=ExtResource("21_su46k")]
+transform = Transform3D(-1.175702, -4.5071624e-16, -5.7620447e-08, 4.379831e-09, 1.0321016, -1.8626451e-09, 1.3782179e-07, -3.844878e-09, -0.99999994, 0.0011160374, -0.39114237, -28.337729)
 
 [node name="floor" type="StaticBody3D" parent="Room2" unique_id=1860047826]
 
@@ -518,6 +525,17 @@ transform = Transform3D(0.12999995, 0, 0, 0, 1.0249997, 0, 0, 0, 0.98999995, 0, 
 mesh = SubResource("BoxMesh_8mg24")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Room2/wall" unique_id=1595389204]
+transform = Transform3D(0.12999997, 0, 0, 0, 1.0249997, 0, 0, 0, 0.98999995, 0, -0.026630223, -0.011871308)
+shape = SubResource("BoxShape3D_rbjey")
+
+[node name="wall4" type="StaticBody3D" parent="Room2" unique_id=280819584]
+transform = Transform3D(-4.3711385e-08, 0, 4.6949687, 0, 3.5149999, 0, -0.99999994, 0, -2.052236e-07, 0.023981333, 1.8882179, 1.5890117)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Room2/wall4" unique_id=216821701]
+transform = Transform3D(0.12999995, 0, 0, 0, 1.0249997, 0, 0, 0, 0.98999995, 0, 0, 0)
+mesh = SubResource("BoxMesh_8mg24")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room2/wall4" unique_id=367138371]
 transform = Transform3D(0.12999997, 0, 0, 0, 1.0249997, 0, 0, 0, 0.98999995, 0, -0.026630223, -0.011871308)
 shape = SubResource("BoxShape3D_rbjey")
 
@@ -610,7 +628,7 @@ transform = Transform3D(2.8499637, -0.5100423, 1.4477253, 0.44322604, 4.539415, 
 shape = SubResource("BoxShape3D_xg51m")
 
 [node name="Chest" type="StaticBody3D" parent="Room2" unique_id=1624493113]
-transform = Transform3D(0.0019243362, 0.020440836, -0.010029496, -0.01022665, -0.008216904, -0.018708821, -0.020342916, 0.0060643433, 0.00845643, -1.1224763, -3.4633713, -23.170485)
+transform = Transform3D(0.0019243362, 0.020440836, -0.010029496, -0.01022665, -0.008216903, -0.018708821, -0.020342916, 0.006064343, 0.00845643, -1.1224763, -3.4633713, -23.170485)
 script = ExtResource("17_wg5u2")
 
 [node name="ChestMesh" parent="Room2/Chest" unique_id=387530279 instance=ExtResource("17_26187")]
@@ -640,6 +658,15 @@ shape = SubResource("BoxShape3D_2j60g")
 transform = Transform3D(4.7, 0, 0, 0, 1, 0, 0, 0, 10.74, 0, -0.2409544, -17.885098)
 mesh = SubResource("PlaneMesh_olaaw")
 skeleton = NodePath("../..")
+
+[node name="WaterDamage" type="Area3D" parent="Room2" unique_id=1542996835]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.1464958, -17.8)
+script = ExtResource("25_water_damage")
+damage = 25
+damage_interval = 0.35
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room2/WaterDamage" unique_id=223275834]
+shape = SubResource("BoxShape3D_water_damage")
 
 [node name="Lamp_stash" type="StaticBody3D" parent="Room2" unique_id=1484722393]
 
